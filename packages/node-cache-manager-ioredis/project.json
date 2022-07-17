@@ -1,0 +1,33 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/node-cache-manager-ioredis/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/node-cache-manager-ioredis",
+        "main": "packages/node-cache-manager-ioredis/src/index.ts",
+        "tsConfig": "packages/node-cache-manager-ioredis/tsconfig.lib.json",
+        "assets": ["packages/node-cache-manager-ioredis/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/node-cache-manager-ioredis/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/node-cache-manager-ioredis"],
+      "options": {
+        "jestConfig": "packages/node-cache-manager-ioredis/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

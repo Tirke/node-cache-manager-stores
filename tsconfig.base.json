@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@node-cache-manager-ioredis/node-cache-manager-ioredis": [
+        "packages/node-cache-manager-ioredis/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
