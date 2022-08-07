@@ -1,9 +1,17 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base",
-    ":semanticPrefixChore",
-    ":preserveSemverRanges",
-    ":prHourlyLimit4"
+  "extends": ["config:base", ":semanticPrefixChore"],
+  "prHourlyLimit": 7,
+  "packageRules": [
+    {
+      "matchSourceUrlPrefixes": ["https://github.com/nrwl/"],
+      "groupName": "nx",
+      "enabled": false
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
   ]
 }
