@@ -107,15 +107,13 @@ class RedisStore {
 
   async mget<T>(...args: any[]) {
     let cb: Callback<T>
-    let options = {}
 
     if (typeof args[args.length - 1] === 'function') {
       cb = args.pop()
     }
 
     if (isObject(args[args.length - 1])) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      options = args.pop()
+      args.pop()
     }
 
     if (Array.isArray(args[0])) {
