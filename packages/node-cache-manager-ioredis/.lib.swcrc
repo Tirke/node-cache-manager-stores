@@ -1,6 +1,6 @@
 {
   "jsc": {
-    "target": "es2017",
+    "target": "es2019",
     "parser": {
       "syntax": "typescript",
       "decorators": true,
@@ -11,7 +11,7 @@
       "legacyDecorator": true
     },
     "keepClassNames": true,
-    "externalHelpers": true,
+    "externalHelpers": false,
     "loose": true
   },
   "module": {

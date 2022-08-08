@@ -15,5 +15,8 @@
   },
   "publishConfig": {
     "directory": "../../dist/packages/node-cache-manager-ioredis"
+  },
+  "dependencies": {
+    "ioredis": "^5.2.2"
   }
 }
