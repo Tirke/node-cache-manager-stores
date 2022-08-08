@@ -60,6 +60,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
+          commit: 'chore: version packages'
           publish: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.CHANGESET_GITHUB_TOKEN }}
