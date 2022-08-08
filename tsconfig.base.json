@@ -2,18 +2,17 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
-    "sourceMap": true,
-    "declaration": false,
+    "baseUrl": ".",
+    "module": "commonjs",
+    "target": "es2019",
+    "lib": ["ES2019", "ES2020.String", "DOM", "DOM.Iterable"],
     "moduleResolution": "node",
+    "declaration": true,
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
-    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
     "paths": {
       "@node-cache-manager-ioredis/node-cache-manager-ioredis": [
         "packages/node-cache-manager-ioredis/src/index.ts"
