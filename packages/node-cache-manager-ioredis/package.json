@@ -1,5 +1,19 @@
 {
-  "name": "@node-cache-manager-ioredis/node-cache-manager-ioredis",
-  "version": "0.0.1",
-  "type": "commonjs"
+  "name": "@tirke/node-cache-manager-ioredis",
+  "version": "0.0.0",
+  "type": "commonjs",
+  "repository": "https://github.com/Tirke/node-cache-manager-ioredis",
+  "funding": "https://github.com/sponsors/tirke",
+  "author": {
+    "name": "Thomas",
+    "email": "tirke@tirke.dev",
+    "url": "https://tirke.dev"
+  },
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=14.20"
+  },
+  "publishConfig": {
+    "directory": "../../dist/packages/node-cache-manager-ioredis"
+  }
 }

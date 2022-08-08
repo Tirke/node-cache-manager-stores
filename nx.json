@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "node-cache-manager-ioredis",
+  "npmScope": "tirke",
   "affected": {
     "defaultBase": "main"
   },
