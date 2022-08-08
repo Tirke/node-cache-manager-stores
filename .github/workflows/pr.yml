@@ -20,11 +20,15 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
+      - name: Start Redis ${{ matrix.redis-version }}
+        uses: supercharge/redis-github-action@1.4.0
+        with:
+          redis-version: ${{ matrix.redis-version }}
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build
-        run: pnpm exec nx affected --target=build --parallel
+        run: pnpm exec nx run-many --target=build --parallel
       - name: Lint
-        run: pnpm exec nx affected --target=lint --parallel
+        run: pnpm exec nx run-many --target=lint --parallel
       - name: Test
-        run: pnpm exec nx affected --target=test --parallel
+        run: pnpm exec nx run-many --target=test --parallel

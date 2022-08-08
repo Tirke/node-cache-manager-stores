@@ -6,8 +6,39 @@ on:
       - main
 
 jobs:
+  testing:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+        redis-version: [4, 5, 6, 7]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.2
+      - name: Install node ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Start Redis ${{ matrix.redis-version }}
+        uses: supercharge/redis-github-action@1.4.0
+        with:
+          redis-version: ${{ matrix.redis-version }}
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build
+        run: pnpm exec nx run-many --target=build --all --parallel
+      - name: Lint
+        run: pnpm exec nx run-many --target=lint --all --parallel
+      - name: Test
+        run: pnpm exec nx run-many --target=test --all --parallel
   publishing:
     runs-on: ubuntu-latest
+    needs: [testing]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -25,12 +56,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Build
-        run: pnpm exec nx run-many --target=build --all --parallel
-      - name: Lint
-        run: pnpm exec nx run-many --target=lint --all --parallel
-      - name: Test
-        run: pnpm exec nx run-many --target=test --all --parallel
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
