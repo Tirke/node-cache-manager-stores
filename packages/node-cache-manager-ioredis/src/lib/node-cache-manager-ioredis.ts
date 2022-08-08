@@ -70,7 +70,7 @@ class RedisStore {
     return this.client;
   }
 
-  set<T>(
+  set(
     key: RedisKey,
     value: RedisValue,
     options?:
@@ -102,7 +102,7 @@ class RedisStore {
     });
   }
 
-  async get<T>(key: RedisKey, options: {} | Callback<T>, cb?: Callback<T>) {
+  async get<T>(key: RedisKey, options: Record<string, unknown> | Callback<T>, cb?: Callback<T>) {
     return new Promise((resolve, reject) => {
       if (typeof options === 'function') {
         cb = options as Callback<T>;
@@ -125,6 +125,7 @@ class RedisStore {
     }
 
     if (isObject(args[args.length - 1])) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       options = args.pop();
     }
 
@@ -212,7 +213,7 @@ function handleResponse(
   };
 }
 
-function isObject(value: any): value is Object {
+function isObject(value: any): value is Record<string, unknown> {
   return value && value instanceof Object && value.constructor === Object;
 }
 

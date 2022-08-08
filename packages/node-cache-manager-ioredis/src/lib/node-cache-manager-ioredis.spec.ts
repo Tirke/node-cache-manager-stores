@@ -1,6 +1,7 @@
-import RedisStore, { Store } from './node-cache-manager-ioredis';
 import { Cache, caching } from 'cache-manager';
 import Redis, { Callback, RedisOptions } from 'ioredis';
+
+import RedisStore, { Store } from './node-cache-manager-ioredis';
 
 let redisCache: Cache;
 let customRedisCache: Cache;
@@ -398,13 +399,13 @@ describe('defaults are set by redis itself', () => {
   });
 
   it('should default the host to `127.0.0.1`', () => {
-    const cache = customRedisCache.store as Store;
+    const cache = defaultRedisCache.store as Store;
     const redis = cache.getClient() as Redis;
-    expect(redis.options.host).toEqual('127.0.0.1');
+    expect(redis.options.host).toEqual('localhost');
   });
 
   it('should default the port to 6379', () => {
-    const cache = customRedisCache.store as Store;
+    const cache = defaultRedisCache.store as Store;
     const redis = cache.getClient() as Redis;
     expect(redis.options.port).toEqual(6379);
   });
