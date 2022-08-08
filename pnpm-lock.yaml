@@ -12,10 +12,12 @@ specifiers:
   '@swc/core': ^1.2.224
   '@swc/helpers': ~0.4.3
   '@swc/jest': 0.2.22
+  '@types/cache-manager': ^4.0.1
   '@types/jest': 28.1.6
   '@types/node': 18.6.4
   '@typescript-eslint/eslint-plugin': ^5.32.0
   '@typescript-eslint/parser': ^5.32.0
+  cache-manager: ^4.1.0
   eslint: ~8.21.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-import: ^2.26.0
@@ -43,10 +45,12 @@ devDependencies:
   '@swc/cli': 0.1.57_@swc+core@1.2.224
   '@swc/core': 1.2.224
   '@swc/jest': 0.2.22_@swc+core@1.2.224
+  '@types/cache-manager': 4.0.1
   '@types/jest': 28.1.6
   '@types/node': 18.6.4
   '@typescript-eslint/eslint-plugin': 5.32.0_iosr3hrei2tubxveewluhu5lhy
   '@typescript-eslint/parser': 5.32.0_qugx7qdu5zevzvxaiqyxfiwquq
+  cache-manager: 4.1.0
   eslint: 8.21.0
   eslint-config-prettier: 8.5.0_eslint@8.21.0
   eslint-plugin-import: 2.26.0_wuikv5nqgdfyng42xxm7lklfmi
@@ -1377,6 +1381,10 @@ packages:
       '@babel/types': 7.18.8
     dev: true
 
+  /@types/cache-manager/4.0.1:
+    resolution: {integrity: sha512-w4Gm7qg4ohvk0k4CLhOoqnMohWEyeyAOTovPgkguhuDCfVEV1wN/HWEd1XzB1S9/NV9pUcZcc498qU4E15ck6A==}
+    dev: true
+
   /@types/graceful-fs/4.1.5:
     resolution: {integrity: sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==}
     dependencies:
@@ -1717,6 +1725,10 @@ packages:
       es-shim-unscopables: 1.0.0
     dev: true
 
+  /async/3.2.3:
+    resolution: {integrity: sha512-spZRyzKL5l5BZQrr/6m/SqFdBN0q3OCI0f9rjfBzCMBIP4p75P620rR3gTmaksNOhmzgdxcaxdNfMy6anrbM0g==}
+    dev: true
+
   /async/3.2.4:
     resolution: {integrity: sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==}
     dev: true
@@ -1916,6 +1928,14 @@ packages:
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
+    dev: true
+
+  /cache-manager/4.1.0:
+    resolution: {integrity: sha512-ZGM6dLxrP65bfOZmcviWMadUOCICqpLs92+P/S5tj8onz+k+tB7Gr+SAgOUHCQtfm2gYEQDHiKeul4+tYPOJ8A==}
+    dependencies:
+      async: 3.2.3
+      lodash.clonedeep: 4.5.0
+      lru-cache: 7.13.2
     dev: true
 
   /call-bind/1.0.2:
@@ -4213,6 +4233,10 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /lodash.clonedeep/4.5.0:
+    resolution: {integrity: sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==}
+    dev: true
+
   /lodash.defaults/4.2.0:
     resolution: {integrity: sha512-qjxPLHd3r5DnsdGacqOMU6pb/avJzdh9tFX2ymgoZE27BmjXrNy/y4LoaiTeAb+O3gL8AfpJGtqfX/ae2leYYQ==}
     dev: false
@@ -4234,6 +4258,11 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+    dev: true
+
+  /lru-cache/7.13.2:
+    resolution: {integrity: sha512-VJL3nIpA79TodY/ctmZEfhASgqekbT574/c4j3jn4bKXbSCnTTCH/KltZyvL2GlV+tGSMtsWyem8DCX7qKTMBA==}
+    engines: {node: '>=12'}
     dev: true
 
   /make-dir/3.1.0:
