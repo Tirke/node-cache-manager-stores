@@ -8,7 +8,8 @@
     "release": "zx tools/scripts/patch-package-publish-config.mjs && pnpm exec changeset publish"
   },
   "dependencies": {
-    "ioredis": "^5.2.2"
+    "ioredis": "^5.2.2",
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.6",
