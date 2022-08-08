@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@1.6.4/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "Tirke/build-it-zip-it" }],
+  "changelog": ["@changesets/changelog-github", { "repo": "Tirke/node-cache-manager-ioredis" }],
   "commit": false,
   "linked": [],
   "access": "public",
