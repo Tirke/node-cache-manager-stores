@@ -56,13 +56,15 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Build
+        run: pnpm exec nx run-many --target=build --all --parallel
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
           commit: 'chore: version packages'
           title: 'chore: version packages'
-          publish: pnpm exec nx run-many --target=build --all --parallel && pnpm run release
+          publish: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.CHANGESET_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
