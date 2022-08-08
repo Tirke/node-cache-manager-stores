@@ -1,0 +1,41 @@
+name: Test and release
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publishing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.2
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build
+        run: pnpm exec nx run-many --target=build --all --parallel
+      - name: Lint
+        run: pnpm exec nx run-many --target=lint --all --parallel
+      - name: Test
+        run: pnpm exec nx run-many --target=test --all --parallel
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.CHANGESET_GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

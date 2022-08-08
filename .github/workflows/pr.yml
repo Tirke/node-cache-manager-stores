@@ -1,0 +1,30 @@
+name: PR testing
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.2
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build
+        run: pnpm exec nx affected --target=build --parallel
+      - name: Lint
+        run: pnpm exec nx affected --target=lint --parallel
+      - name: Test
+        run: pnpm exec nx affected --target=test --parallel
