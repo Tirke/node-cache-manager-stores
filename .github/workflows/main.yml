@@ -35,7 +35,9 @@ jobs:
       - name: Lint
         run: pnpm exec nx run-many --target=lint --all --parallel
       - name: Test
-        run: pnpm exec nx run-many --target=test --all --parallel
+        run: pnpm exec nx run-many --target=test --all --parallel --coverage
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
   publishing:
     runs-on: ubuntu-latest
     needs: [testing]
