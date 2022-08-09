@@ -290,6 +290,22 @@ describe('ttl', () => {
     await cache.getClient().quit()
     await expect(cache.ttl('toto')).rejects.toEqual(Error('Connection is closed.'))
   })
+
+  it('external Redis instance should respect top level ttl', async () => {
+    const externalRedisInstanceCache = caching({
+      store: RedisStore,
+      redisInstance: new Redis({
+        host: config.host,
+        port: config.port,
+        password: config.password,
+        db: config.db,
+      }),
+      ttl: 120,
+    })
+
+    await externalRedisInstanceCache.set('foo', 'bar')
+    expect(await externalRedisInstanceCache.store.ttl?.('foo')).toEqual(120)
+  })
 })
 
 describe('keys', () => {
@@ -403,6 +419,7 @@ describe('wrap function', () => {
         getUser(userId, cb)
       },
       (err, user) => {
+        expect(err).toBeNull()
         expect(user.id).toEqual(userId)
         redisCache.wrap(
           'wrap-user',
@@ -410,6 +427,7 @@ describe('wrap function', () => {
             getUser(userId + 1, cb)
           },
           (err, user) => {
+            expect(err).toBeNull()
             expect(user.id).toEqual(userId)
             done()
           },
