@@ -36,10 +36,11 @@ jobs:
         run: pnpm exec nx run-many --target=lint --all --parallel
       - name: Test
         run: pnpm exec nx run-many --target=test --all --parallel --coverage
+      - run: ls -al ./coverage/packages/node-cache-manager-ioredis
       - name: Upload coverage
         uses: codecov/codecov-action@v3
         with:
-          directory: ./coverage/packages
+          directory: ./coverage/packages/node-cache-manager-ioredis
   publishing:
     runs-on: ubuntu-latest
     needs: [testing]
