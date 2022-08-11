@@ -3,6 +3,8 @@
 
 # IORedis store for node cache manager
 
+Redis cache store for [node-cache-manager](https://github.com/BryanDonovan/node-cache-manager).
+
 This is a rewrite of [dabroek/node-cache-manager-ioredis](https://github.com/dabroek/node-cache-manager-ioredis).
 It uses TypeScript with updated dependencies and missing features added.
 It aims to provide **the most simple wrapper possible** by just passing the configuration to the underlying [`ioredis`](https://github.com/luin/ioredis) package.
