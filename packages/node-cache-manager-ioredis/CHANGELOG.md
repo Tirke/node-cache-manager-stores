@@ -1,5 +1,25 @@
 # @tirke/node-cache-manager-ioredis
 
+## 2.0.0
+
+### Major Changes
+
+- [`d4e0e63`](https://github.com/Tirke/node-cache-manager-ioredis/commit/d4e0e638ae1319bb049fd1a929a7a26ef13aee11) Thanks [@Tirke](https://github.com/Tirke)! - Changed import from default to named one
+
+  Package was previously imported as a default import
+
+  ```typescript
+  import RedisStore from '@tirke/cache-manager-ioredis'
+  ```
+
+  This could lead to some difficulties when transpiling and importing with require in node.
+
+  The package is now exporting a new named import
+
+  ```typescript
+  import { IoRedisStore } from '@tirke/cache-manager-ioredis'
+  ```
+
 ## 1.0.3
 
 ### Patch Changes
