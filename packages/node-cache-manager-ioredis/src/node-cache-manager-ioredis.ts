@@ -66,8 +66,8 @@ class RedisStore {
     value: RedisValue,
     options?:
       | {
-          ttl?: number
-        }
+      ttl?: number
+    }
       | number,
     cb?: ErrorCallback,
   ) {
