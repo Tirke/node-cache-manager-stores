@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-ioredis
 
+## 1.0.2
+
+### Patch Changes
+
+- [`3d6dfaa`](https://github.com/Tirke/node-cache-manager-ioredis/commit/3d6dfaaa248d3261329d48c6508d53ce505522ba) Thanks [@Tirke](https://github.com/Tirke)! - Removed index file at package root
+
 ## 1.0.1
 
 ### Patch Changes
