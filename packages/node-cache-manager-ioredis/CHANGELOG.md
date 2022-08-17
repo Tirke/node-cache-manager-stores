@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-ioredis
 
+## 1.0.3
+
+### Patch Changes
+
+- [`03da035`](https://github.com/Tirke/node-cache-manager-ioredis/commit/03da03593f981cebb13673f7dcc784ae4c4e99c3) Thanks [@Tirke](https://github.com/Tirke)! - Bump deps and revert index change
+
 ## 1.0.2
 
 ### Patch Changes
