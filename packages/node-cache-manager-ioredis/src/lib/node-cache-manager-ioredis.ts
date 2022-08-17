@@ -200,7 +200,7 @@ function isObject(value: any): value is Record<string, unknown> {
   return value && value instanceof Object && value.constructor === Object
 }
 
-export default {
+export const IoRedisStore = {
   create(args: CreateArgs) {
     const isCacheableValue = args.isCacheableValue || ((value) => value !== undefined && value !== null)
     return new RedisStore({ ...args, isCacheableValue })

@@ -1,7 +1,7 @@
 import { Cache, caching } from 'cache-manager'
 import Redis, { Callback, RedisOptions } from 'ioredis'
 
-import RedisStore, { Store } from './node-cache-manager-ioredis'
+import { IoRedisStore, Store } from './node-cache-manager-ioredis'
 
 let redisCache: Cache
 let customRedisCache: Cache
@@ -18,7 +18,7 @@ const config = {
 
 beforeEach((done) => {
   redisCache = caching({
-    store: RedisStore,
+    store: IoRedisStore,
     ttl: config.ttl,
     instanceConfig: {
       host: config.host,
@@ -29,7 +29,7 @@ beforeEach((done) => {
   })
 
   customRedisCache = caching({
-    store: RedisStore,
+    store: IoRedisStore,
     instanceConfig: {
       host: config.host,
       port: config.port,
@@ -50,7 +50,7 @@ beforeEach((done) => {
 describe('init', () => {
   it('should create a store with password instead of auth_pass (auth_pass is deprecated for redis > 2.5)', (done) => {
     const redisPwdCache = caching({
-      store: RedisStore,
+      store: IoRedisStore,
       ttl: config.ttl,
       instanceConfig: {
         host: config.host,
@@ -75,7 +75,7 @@ describe('init', () => {
 
   it('should create a store with an external Redis instance', (done) => {
     const externalRedisInstanceCache = caching({
-      store: RedisStore,
+      store: IoRedisStore,
       redisInstance: new Redis({
         host: config.host,
         port: config.port,
@@ -146,7 +146,7 @@ describe('set', () => {
 
   it('should throw on circular object stringifies', async () => {
     const allowNullCache = caching({
-      store: RedisStore,
+      store: IoRedisStore,
       instanceConfig: {
         host: config.host,
         port: config.port,
@@ -293,7 +293,7 @@ describe('ttl', () => {
 
   it('external Redis instance should respect top level ttl', async () => {
     const externalRedisInstanceCache = caching({
-      store: RedisStore,
+      store: IoRedisStore,
       redisInstance: new Redis({
         host: config.host,
         port: config.port,
@@ -376,7 +376,7 @@ describe('defaults are set by redis itself', () => {
 
   beforeEach(() => {
     defaultRedisCache = caching({
-      store: RedisStore,
+      store: IoRedisStore,
       ttl: 12,
     })
   })

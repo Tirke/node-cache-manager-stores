@@ -9,30 +9,30 @@ This is a rewrite of [dabroek/node-cache-manager-ioredis](https://github.com/dab
 It uses TypeScript with updated dependencies and missing features added.
 It aims to provide **the most simple wrapper possible** by just passing the configuration to the underlying [`ioredis`](https://github.com/luin/ioredis) package.
 
-Installation
-------------
+## Installation
 
 ```sh
 npm install @tirke/cache-manager-ioredis
 ```
+
 ```sh
 yarn add @tirke/cache-manager-ioredis
 ```
+
 ```sh
 pnpm add @tirke/cache-manager-ioredis
 ```
 
-Usage Examples
---------------
+## Usage Examples
 
 ### Using promises
 
 ```typescript
-import RedisStore, { Store } from '@tirke/cache-manager-ioredis'
+import { IoRedisStore, Store } from '@tirke/cache-manager-ioredis'
 import { caching } from 'cache-manager'
 
 const redisCache = caching({
-  store: RedisStore,
+  store: IoRedisStore,
   host: 'localhost', // default value
   port: 6379, // default value
   password: 'XXXXX',
@@ -42,7 +42,7 @@ const redisCache = caching({
 
 // listen for redis connection error event
 const cache = redisCache.store as Store
-const redisClient = cache.getClient();
+const redisClient = cache.getClient()
 redisClient.on('error', (error: unknown) => {
   // handle error here
   console.log(error)
