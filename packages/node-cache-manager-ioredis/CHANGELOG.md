@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-ioredis
 
+## 2.0.1
+
+### Patch Changes
+
+- [`44b0b2e`](https://github.com/Tirke/node-cache-manager-ioredis/commit/44b0b2e8c15cb3cc12114990770bb3f2b1bc83b4) Thanks [@Tirke](https://github.com/Tirke)! - Put the correct package names in the READMEs
+
 ## 2.0.0
 
 ### Major Changes
