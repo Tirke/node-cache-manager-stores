@@ -12,15 +12,15 @@ It aims to provide **the most simple wrapper possible** by just passing the conf
 ## Installation
 
 ```sh
-npm install @tirke/cache-manager-ioredis
+npm install @tirke/node-cache-manager-ioredis
 ```
 
 ```sh
-yarn add @tirke/cache-manager-ioredis
+yarn add @tirke/node-cache-manager-ioredis
 ```
 
 ```sh
-pnpm add @tirke/cache-manager-ioredis
+pnpm add @tirke/node-cache-manager-ioredis
 ```
 
 ## Usage Examples
@@ -28,7 +28,7 @@ pnpm add @tirke/cache-manager-ioredis
 ### Using promises
 
 ```typescript
-import { IoRedisStore, Store } from '@tirke/cache-manager-ioredis'
+import { IoRedisStore, Store } from '@tirke/node-cache-manager-ioredis'
 import { caching } from 'cache-manager'
 
 const redisCache = caching({
