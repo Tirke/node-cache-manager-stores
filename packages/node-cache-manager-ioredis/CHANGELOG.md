@@ -1,5 +1,12 @@
 # @tirke/node-cache-manager-ioredis
 
+## 2.1.0
+
+### Minor Changes
+
+- [`91269b6`](https://github.com/Tirke/node-cache-manager-ioredis/commit/91269b6f8e7e79514f7732a89847e7ee270b9183) Thanks [@Tirke](https://github.com/Tirke)! - README example was not working because the root params where not passed to the created IORedis instance.
+  This should now work. README now also contains intended ways to instantiate the cache-manager.
+
 ## 2.0.1
 
 ### Patch Changes
