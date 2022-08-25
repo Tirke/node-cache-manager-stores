@@ -25,7 +25,58 @@ pnpm add @tirke/node-cache-manager-ioredis
 
 ## Usage Examples
 
-### Using promises
+### Init
+
+I wanted to provide more type-safe ways to init the `cache-manager`.
+
+```typescript
+import { IoRedisStore, Store } from '@tirke/node-cache-manager-ioredis'
+import { caching } from 'cache-manager'
+
+// Default
+const defaultRedisCache = caching({
+  store: IoRedisStore,
+  host: 'localhost', // default value
+  port: 6379, // default value
+  password: 'XXXXX',
+  db: 0,
+  ttl: 600,
+})
+
+// With instanceConfig acceptingt type RedisOptions
+const instanceRedisCache = caching({
+  store: IoRedisStore,
+  instanceConfig: {
+    host: 'localhost', // default value
+    port: 6379, // default value
+    password: 'XXXXX',
+  },
+  ttl: 600,
+})
+
+// With clusterConfig acceptingt type ClusterConfig
+const clusterRedisCache = caching({
+  store: IoRedisStore,
+  clusterConfig: {
+    nodes: [
+      { port: 6380, host: '127.0.0.1' },
+      { port: 6381, host: '127.0.0.1' },
+    ],
+  },
+  ttl: 600,
+})
+
+// Finaly passing a instiantiated IORedis instance type Redis | Cluster
+import Redis from 'ioredis'
+const instance = new Redis()
+const instantiatedRedisCache = caching({
+  store: IoRedisStore,
+  redisInstance: instance,
+  ttl: 600,
+})
+```
+
+### Generic usage with promises
 
 ```typescript
 import { IoRedisStore, Store } from '@tirke/node-cache-manager-ioredis'
