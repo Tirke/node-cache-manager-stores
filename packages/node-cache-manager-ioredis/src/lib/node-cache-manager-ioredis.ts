@@ -25,7 +25,7 @@ type Args = {
   redisInstance?: Redis | Cluster
   clusterConfig?: ClusterConfig
   instanceConfig?: RedisOptions
-}
+} & RedisOptions
 
 export type Store = RedisStore
 
@@ -53,7 +53,7 @@ class RedisStore {
     }
 
     if (!args.instanceConfig && !args.clusterConfig && !args.redisInstance) {
-      this.client = new Redis()
+      this.client = new Redis(args)
     }
   }
 
