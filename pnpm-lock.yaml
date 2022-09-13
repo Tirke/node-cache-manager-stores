@@ -11,7 +11,7 @@ importers:
       '@nrwl/jest': 14.6.3
       '@nrwl/js': 14.6.3
       '@nrwl/linter': 14.6.3
-      '@nrwl/nx-cloud': 14.6.1
+      '@nrwl/nx-cloud': 14.6.2
       '@nrwl/workspace': 14.6.3
       '@swc/cli': 0.1.57
       '@swc/core': 1.2.246
@@ -42,7 +42,7 @@ importers:
       '@nrwl/jest': 14.6.3_ou4bnwig7ib6tyqv7jxpmtk7va
       '@nrwl/js': 14.6.3_iu5kizdbjvrg7i6i5ybpfnvh3i
       '@nrwl/linter': 14.6.3_hxjafre3htl2q3eelpfwb7o7d4
-      '@nrwl/nx-cloud': 14.6.1
+      '@nrwl/nx-cloud': 14.6.2
       '@nrwl/workspace': 14.6.3_dep6hcs2dkcpikl77hzjqv3zem
       '@swc/cli': 0.1.57_@swc+core@1.2.246
       '@swc/core': 1.2.246
@@ -1333,8 +1333,8 @@ packages:
       - typescript
     dev: true
 
-  /@nrwl/nx-cloud/14.6.1:
-    resolution: {integrity: sha512-ffmt4BlfO9s8fJmXnnKIStmeq6960Ux825kBqz7Jq2y9BYm1DLopNfx54RJHZT6JCDDEt5hMSYTSJk7rV6ROng==}
+  /@nrwl/nx-cloud/14.6.2:
+    resolution: {integrity: sha512-w8ujbFMOxE7lJg52O3JjnpTGlBKc+/vovxVTplIfGU9TYgEgAo/v4HS9svztzGd9Era7qmNaoYOmxm6Ebtbo5g==}
     hasBin: true
     dependencies:
       axios: 0.21.4
