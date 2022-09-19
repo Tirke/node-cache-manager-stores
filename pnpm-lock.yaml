@@ -17,7 +17,7 @@ importers:
       '@swc/core': 1.3.1
       '@swc/jest': 0.2.22
       '@types/cache-manager': 4.0.2
-      '@types/jest': 29.0.2
+      '@types/jest': 29.0.3
       '@types/node': 18.7.18
       '@typescript-eslint/eslint-plugin': 5.37.0
       '@typescript-eslint/parser': 5.37.0
@@ -48,7 +48,7 @@ importers:
       '@swc/core': 1.3.1
       '@swc/jest': 0.2.22_@swc+core@1.3.1
       '@types/cache-manager': 4.0.2
-      '@types/jest': 29.0.2
+      '@types/jest': 29.0.3
       '@types/node': 18.7.18
       '@typescript-eslint/eslint-plugin': 5.37.0_22c5fnooleyfkzrkkgdmel5kmi
       '@typescript-eslint/parser': 5.37.0_irgkl5vooow2ydyo6aokmferha
@@ -1703,8 +1703,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/29.0.2:
-    resolution: {integrity: sha512-TaklkwSEtvwJpleiKBHgEBySIQlcZ08gYP/s5wdtdLnjz9uxjnDd7U+Y0JWACebkqBc+jtbol2PEtEW0wQV2zQ==}
+  /@types/jest/29.0.3:
+    resolution: {integrity: sha512-F6ukyCTwbfsEX5F2YmVYmM5TcTHy1q9P5rWlRbrk56KyMh3v9xRGUO3aa8+SkvMi0SHXtASJv1283enXimC0Og==}
     dependencies:
       expect: 29.0.3
       pretty-format: 29.0.3
