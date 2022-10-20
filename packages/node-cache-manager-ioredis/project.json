@@ -22,7 +22,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/node-cache-manager-ioredis"],
+      "outputs": ["{workspaceRoot}/coverage/packages/node-cache-manager-ioredis"],
       "options": {
         "jestConfig": "packages/node-cache-manager-ioredis/jest.config.ts",
         "passWithNoTests": true
