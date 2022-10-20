@@ -18,7 +18,7 @@
     "@nrwl/jest": "14.8.1",
     "@nrwl/js": "14.8.1",
     "@nrwl/linter": "14.8.1",
-    "@nrwl/nx-cloud": "14.7.0",
+    "@nrwl/nx-cloud": "15.0.0",
     "@nrwl/workspace": "14.8.1",
     "@swc/cli": "0.1.57",
     "@swc/core": "1.3.6",

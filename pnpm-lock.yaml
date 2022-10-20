@@ -11,7 +11,7 @@ importers:
       '@nrwl/jest': 14.8.1
       '@nrwl/js': 14.8.1
       '@nrwl/linter': 14.8.1
-      '@nrwl/nx-cloud': 14.7.0
+      '@nrwl/nx-cloud': 15.0.0
       '@nrwl/workspace': 14.8.1
       '@swc/cli': 0.1.57
       '@swc/core': 1.3.6
@@ -42,7 +42,7 @@ importers:
       '@nrwl/jest': 14.8.1_i5rbqwaghdxuprxgw4wscs2w34
       '@nrwl/js': 14.8.1_ees5atvvuy35ge5xy2c7e2yi4i
       '@nrwl/linter': 14.8.1_cgwxwrc6wxwjpsdzhrkl2uqina
-      '@nrwl/nx-cloud': 14.7.0
+      '@nrwl/nx-cloud': 15.0.0
       '@nrwl/workspace': 14.8.1_porydqsnol5g7kdwdhkelboxky
       '@swc/cli': 0.1.57_@swc+core@1.3.6
       '@swc/core': 1.3.6
@@ -1630,8 +1630,8 @@ packages:
       - typescript
     dev: true
 
-  /@nrwl/nx-cloud/14.7.0:
-    resolution: {integrity: sha512-sEGK5Ire5DC2liIsT89qR6SzZa46uinmWEAMz8ocMuu7nIMnwV9m15qajxhmYKasYsq9vTeT+x7BlZ4fnxPrNg==}
+  /@nrwl/nx-cloud/15.0.0:
+    resolution: {integrity: sha512-KAYmbx8M4we9gUn14rDnt5vMz+yYwIa4xJNsByWf7mjzC4lvBVZKqFzFGaklWzp/gJN/xyNleZt/Fg64k/kF+A==}
     hasBin: true
     dependencies:
       axios: 0.21.4
@@ -2453,7 +2453,7 @@ packages:
   /axios/0.21.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.15.1
+      follow-redirects: 1.15.2
     transitivePeerDependencies:
       - debug
     dev: true
@@ -3621,16 +3621,6 @@ packages:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
 
-  /follow-redirects/1.15.1:
-    resolution: {integrity: sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    dev: true
-
   /follow-redirects/1.15.2:
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
     engines: {node: '>=4.0'}
@@ -4231,7 +4221,7 @@ packages:
     hasBin: true
     dependencies:
       async: 3.2.4
-      chalk: 4.1.0
+      chalk: 4.1.2
       filelist: 1.0.4
       minimatch: 3.1.2
     dev: true
