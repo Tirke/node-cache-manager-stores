@@ -21,7 +21,7 @@ importers:
       '@types/node': 18.11.2
       '@typescript-eslint/eslint-plugin': 5.40.1
       '@typescript-eslint/parser': 5.40.1
-      cache-manager: 4.1.0
+      cache-manager: 5.1.1
       eslint: 8.25.0
       eslint-config-prettier: 8.5.0
       eslint-plugin-import: 2.26.0
@@ -52,7 +52,7 @@ importers:
       '@types/node': 18.11.2
       '@typescript-eslint/eslint-plugin': 5.40.1_ukgdydjtebaxmxfqp5v5ulh64y
       '@typescript-eslint/parser': 5.40.1_z4bbprzjrhnsfa24uvmcbu7f5q
-      cache-manager: 4.1.0
+      cache-manager: 5.1.1
       eslint: 8.25.0
       eslint-config-prettier: 8.5.0_eslint@8.25.0
       eslint-plugin-import: 2.26.0_vcunoyu347gmi72pwsm7mdvjca
@@ -2323,10 +2323,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /async/3.2.3:
-    resolution: {integrity: sha512-spZRyzKL5l5BZQrr/6m/SqFdBN0q3OCI0f9rjfBzCMBIP4p75P620rR3gTmaksNOhmzgdxcaxdNfMy6anrbM0g==}
-    dev: true
-
   /async/3.2.4:
     resolution: {integrity: sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==}
     dev: true
@@ -2566,12 +2562,11 @@ packages:
       ieee754: 1.2.1
     dev: true
 
-  /cache-manager/4.1.0:
-    resolution: {integrity: sha512-ZGM6dLxrP65bfOZmcviWMadUOCICqpLs92+P/S5tj8onz+k+tB7Gr+SAgOUHCQtfm2gYEQDHiKeul4+tYPOJ8A==}
+  /cache-manager/5.1.1:
+    resolution: {integrity: sha512-xvbv24xOimcGNIna+LOoX0IV8ng6JrEhocYOpfaxPRx4fzyB9B91WYTj/kHcgt8ZPuDq8nt3T9XFh6NlWtA2Ew==}
     dependencies:
-      async: 3.2.3
       lodash.clonedeep: 4.5.0
-      lru-cache: 7.13.2
+      lru-cache: 7.14.0
     dev: true
 
   /call-bind/1.0.2:
@@ -5050,8 +5045,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lru-cache/7.13.2:
-    resolution: {integrity: sha512-VJL3nIpA79TodY/ctmZEfhASgqekbT574/c4j3jn4bKXbSCnTTCH/KltZyvL2GlV+tGSMtsWyem8DCX7qKTMBA==}
+  /lru-cache/7.14.0:
+    resolution: {integrity: sha512-EIRtP1GrSJny0dqb50QXRUNBxHJhcpxHC++M5tD7RYbvLLn5KVWKsbyswSSqDuU15UFi3bgTQIY8nhDMeF6aDQ==}
     engines: {node: '>=12'}
     dev: true
 
