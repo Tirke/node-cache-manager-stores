@@ -25,76 +25,71 @@ pnpm add @tirke/node-cache-manager-ioredis
 
 ## Usage Examples
 
+All examples have changed a bit since the new major version of `node-cache-manager`
+Everything is now based on promises everywhere, no more callbacks.
+
 ### Init
 
 I wanted to provide more type-safe ways to init the `cache-manager`.
 
 ```typescript
-import { IoRedisStore, Store } from '@tirke/node-cache-manager-ioredis'
+import { ioRedisStore } from '@tirke/node-cache-manager-ioredis'
 import { caching } from 'cache-manager'
 
 // Default
-const defaultRedisCache = caching({
-  store: IoRedisStore,
+const defaultRedisCache = caching(ioRedisStore, {
   host: 'localhost', // default value
   port: 6379, // default value
   password: 'XXXXX',
-  db: 0,
-  ttl: 600,
+  ttl: 60,
 })
 
-// With instanceConfig acceptingt type RedisOptions
-const instanceRedisCache = caching({
-  store: IoRedisStore,
+// With instanceConfig accepting type RedisOptions
+const instanceRedisCache = caching(ioRedisStore, {
   instanceConfig: {
     host: 'localhost', // default value
     port: 6379, // default value
     password: 'XXXXX',
   },
-  ttl: 600,
+  ttl: 60,
 })
 
-// With clusterConfig acceptingt type ClusterConfig
-const clusterRedisCache = caching({
-  store: IoRedisStore,
+// With clusterConfig accepting type ClusterConfig
+const clusterRedisCache = caching(ioRedisStore, {
   clusterConfig: {
     nodes: [
       { port: 6380, host: '127.0.0.1' },
       { port: 6381, host: '127.0.0.1' },
     ],
   },
-  ttl: 600,
+  ttl: 60,
 })
 
-// Finaly passing a instiantiated IORedis instance type Redis | Cluster
+// Finally passing a instiantiated IORedis instance type Redis | Cluster
 import Redis from 'ioredis'
 const instance = new Redis()
-const instantiatedRedisCache = caching({
-  store: IoRedisStore,
+const instantiatedRedisCache = caching(ioRedisStore, {
   redisInstance: instance,
-  ttl: 600,
+  ttl: 60,
 })
 ```
 
 ### Generic usage with promises
 
 ```typescript
-import { IoRedisStore, Store } from '@tirke/node-cache-manager-ioredis'
+import { ioRedisStore, RedisCache } from '@tirke/node-cache-manager-ioredis'
 import { caching } from 'cache-manager'
 
-const redisCache = caching({
-  store: IoRedisStore,
+const redisCache: RedisCache = caching(ioRedisStore, {
   host: 'localhost', // default value
   port: 6379, // default value
   password: 'XXXXX',
-  db: 0,
   ttl: 600,
 })
 
 // listen for redis connection error event
-const cache = redisCache.store as Store
-const redisClient = cache.getClient()
-redisClient.on('error', (error: unknown) => {
+const cache = redisCache.store
+cache.client.on('error', (error: unknown) => {
   // handle error here
   console.log(error)
 })
