@@ -25,6 +25,8 @@ pnpm add @tirke/node-cache-manager-ioredis
 
 ## Usage Examples
 
+All examples have changed a bit since the new major version of `node-cache-manager`
+
 ### Init
 
 I wanted to provide more type-safe ways to init the `cache-manager`.

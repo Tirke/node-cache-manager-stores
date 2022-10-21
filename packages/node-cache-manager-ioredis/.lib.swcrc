@@ -1,6 +1,6 @@
 {
   "jsc": {
-    "target": "es2019",
+    "target": "es2021",
     "parser": {
       "syntax": "typescript",
       "decorators": true,
@@ -19,6 +19,6 @@
     "strict": true,
     "noInterop": true
   },
-  "sourceMaps": true,
+  "sourceMaps": "inline",
   "exclude": ["jest.config.ts",".*.spec.tsx?$",".*.test.tsx?$","./src/jest-setup.ts$","./**/jest-setup.ts$",".*.js$"]
 }
