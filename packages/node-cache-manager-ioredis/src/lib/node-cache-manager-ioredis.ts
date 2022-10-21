@@ -1,44 +1,36 @@
+import type { Store, Config, Cache } from 'cache-manager'
 import Redis, { ClusterOptions, Cluster, ClusterNode, RedisOptions, RedisKey } from 'ioredis'
+
+export type RedisCache = Cache<IoRedisStore>
+
+interface IoRedisStore extends Store {
+  readonly isCacheable: (value: unknown) => boolean
+
+  get client(): Redis | Cluster
+}
 
 type ClusterConfig = {
   nodes: ClusterNode[]
   options?: ClusterOptions
 }
 
-type CreateArgs = {
-  store: { create: (args: CreateArgs) => RedisStore }
-  isCacheableValue?: (value: any) => boolean
-  ttl?: number
-  redisInstance?: Redis | Cluster
-  clusterConfig?: ClusterConfig
-  instanceConfig?: RedisOptions
-}
-
-type Callback<T> = (error: any, result: T | undefined) => void
-type NumberCallback = (error: any, result: number | undefined) => void
-type ErrorCallback = (error: any) => void
-
 type Args = {
-  store: { create: (args: CreateArgs) => RedisStore }
-  isCacheableValue: (value: any) => boolean
-  ttl?: number
   redisInstance?: Redis | Cluster
   clusterConfig?: ClusterConfig
   instanceConfig?: RedisOptions
-} & RedisOptions
+} & Config &
+  RedisOptions
 
-export type Store = RedisStore
+const getVal = (value: unknown) => JSON.stringify(value) || '"undefined"'
 
-type RedisValue = string | Buffer | number
-
-class RedisStore {
-  private readonly client!: Redis | Cluster
+class RedisStore implements IoRedisStore {
+  public readonly client!: Redis | Cluster
   readonly internalTtl: number | undefined
-  readonly isCacheableValue: (value: any) => boolean
+  readonly isCacheable: (value: unknown) => boolean
 
   constructor(args: Args) {
     this.internalTtl = args.ttl
-    this.isCacheableValue = args.isCacheableValue
+    this.isCacheable = args.isCacheable || ((value: unknown) => value !== undefined && value !== null)
 
     if (args.instanceConfig) {
       this.client = new Redis(args.instanceConfig)
@@ -57,152 +49,82 @@ class RedisStore {
     }
   }
 
-  getClient() {
-    return this.client
+  async set<T>(key: RedisKey, value: T, ttl?: number) {
+    if (!this.isCacheable(value)) {
+      throw new Error(`${value} is not cacheable`)
+    }
+    const actualTtl = ttl ?? this.internalTtl
+
+    if (actualTtl) {
+      await this.client.setex(key, actualTtl, getVal(value))
+    } else {
+      await this.client.set(key, getVal(value))
+    }
   }
 
-  set(
-    key: RedisKey,
-    value: RedisValue,
-    options?:
-      | {
-          ttl?: number
+  async get<T>(key: RedisKey): Promise<T | undefined> {
+    const value = await this.client.get(key)
+    if (value === null || value === undefined) {
+      return undefined
+    }
+
+    return JSON.parse(value)
+  }
+
+  async mset(args: [string, unknown][], ttl?: number) {
+    const actualTtl = ttl ?? this.internalTtl
+    if (actualTtl) {
+      const multi = this.client.multi()
+      for (const [key, value] of args) {
+        if (!this.isCacheable(value)) {
+          throw new Error(`${value} is not cacheable`)
         }
-      | number,
-    cb?: ErrorCallback,
-  ) {
-    return new Promise((resolve, reject) => {
-      if (!cb) {
-        cb = (err: any, result?: any) => (err ? reject(err) : resolve(result))
+        multi.setex(key, actualTtl, getVal(value))
       }
-
-      if (!this.isCacheableValue(value)) {
-        return cb(new Error(`${value} is not cacheable`))
-      }
-
-      const val = JSON.stringify(value) || '"undefined"'
-      const ttl = (typeof options === 'number' ? options : options?.ttl) ?? this.internalTtl
-
-      if (ttl) {
-        this.client.setex(key, ttl, val, handleResponse(cb))
-      } else {
-        this.client.set(key, val, handleResponse(cb))
-      }
-    })
-  }
-
-  async get<T>(key: RedisKey, options: Record<string, unknown> | Callback<T>, cb?: Callback<T>) {
-    return new Promise((resolve, reject) => {
-      if (typeof options === 'function') {
-        cb = options as Callback<T>
-      }
-
-      if (!cb) {
-        cb = (err: any, result?: any) => (err ? reject(err) : resolve(result))
-      }
-
-      this.client.get(key, handleResponse(cb, { parse: true }))
-    })
-  }
-
-  async mget<T>(...args: any[]) {
-    let cb: Callback<T>
-
-    if (typeof args[args.length - 1] === 'function') {
-      cb = args.pop()
+      await multi.exec()
+      return
     }
 
-    if (isObject(args[args.length - 1])) {
-      args.pop()
-    }
-
-    if (Array.isArray(args[0])) {
-      args = args[0]
-    }
-
-    return new Promise((resolve, reject) => {
-      if (!cb) {
-        cb = (err: any, result?: any) => (err ? reject(err) : resolve(result))
-      }
-      this.client.mget(args, handleResponse(cb, { parse: true }))
-    })
+    await this.client.mset(
+      args.flatMap(([key, value]) => {
+        if (!this.isCacheable(value)) {
+          throw new Error(`${value} is not cacheable`)
+        }
+        return [key, getVal(value)]
+      }),
+    )
   }
 
-  async del(key: RedisKey, cb?: NumberCallback) {
-    return new Promise((resolve, reject) => {
-      if (!cb) {
-        cb = (err: any, result?: number) => (err ? reject(err) : resolve(result))
-      }
-
-      this.client.del(key, handleResponse(cb))
-    })
+  async mget(...args: string[]) {
+    const values = await this.client.mget(args)
+    return values.map((val) => (val === null || val === undefined ? undefined : (JSON.parse(val) as unknown)))
   }
 
-  async reset<T>(cb?: Callback<T>) {
-    return new Promise((resolve, reject) => {
-      if (!cb) {
-        cb = (err: any, result?: any) => (err ? reject(err) : resolve(result))
-      }
-      this.client.flushdb(handleResponse(cb))
-    })
+  async mdel(...args: string[]) {
+    await this.client.del(args)
   }
 
-  async keys<T>(pattern?: string | Callback<T>, cb?: Callback<T>) {
-    return new Promise((resolve, reject) => {
-      if (typeof pattern === 'function') {
-        cb = pattern as Callback<T>
-        pattern = '*'
-      }
-
-      if (!pattern) {
-        pattern = '*'
-      }
-
-      if (!cb) {
-        cb = (err: any, result?: any) => (err ? reject(err) : resolve(result))
-      }
-      this.client.keys(pattern, handleResponse(cb))
-    })
+  async del(key: RedisKey) {
+    await this.client.del(key)
   }
 
-  async ttl<T>(key: string, cb?: Callback<T>) {
-    return new Promise((resolve, reject) => {
-      if (!cb) {
-        cb = (err: any, result?: any) => (err ? reject(err) : resolve(result))
-      }
+  async reset() {
+    await this.client.flushall()
+  }
 
-      this.client.ttl(key, handleResponse(cb))
-    })
+  async keys(pattern = '*') {
+    return this.client.keys(pattern)
+  }
+
+  async ttl(key: string) {
+    return this.client.ttl(key)
   }
 }
 
-function handleResponse(cb: (err: any, res?: any) => void, opts: { parse?: boolean } = {}) {
-  return (err: any, result?: any) => {
-    if (err) {
-      return cb && cb(err)
-    }
-
-    if (opts.parse) {
-      const isMultiple = Array.isArray(result)
-      if (!isMultiple) {
-        result = [result]
-      }
-
-      result = result.map((res: any) => JSON.parse(res))
-      result = isMultiple ? result : result[0]
-    }
-
-    return cb && cb(null, result)
+export const ioRedisStore = async (args?: Args) => {
+  if (!args) {
+    return new RedisStore({})
   }
-}
 
-function isObject(value: any): value is Record<string, unknown> {
-  return value && value instanceof Object && value.constructor === Object
-}
-
-export const IoRedisStore = {
-  create(args: CreateArgs) {
-    const isCacheableValue = args.isCacheableValue || ((value) => value !== undefined && value !== null)
-    return new RedisStore({ ...args, isCacheableValue })
-  },
+  return new RedisStore(args)
 }
