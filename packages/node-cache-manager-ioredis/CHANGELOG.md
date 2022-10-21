@@ -1,5 +1,46 @@
 # @tirke/node-cache-manager-ioredis
 
+## 3.0.0
+
+### Major Changes
+
+- [`40f233d`](https://github.com/Tirke/node-cache-manager-ioredis/commit/40f233d7756ca813a6e0d607054601e15b6840ff) Thanks [@Tirke](https://github.com/Tirke)! - node-cache-manager-ioredis is now compatible with new cache-manager@5 major version
+
+  The new major version of `cache-manager` introduced breaking changes around the API to create a cache manager instance.
+  I also had to rewrite most code because `cache-manager` is now based on promises everywhere so I could ditch the callbacks.
+  Examples in the README have been updated to reflect the changes.
+
+  For a before / after example:
+
+  ```typescript
+  // Before
+
+  import { IoRedisStore } from '@tirke/node-cache-manager-ioredis'
+  import { caching } from 'cache-manager'
+
+  const redisCache = caching({
+    store: IoRedisStore,
+    host: 'localhost', // default value
+    port: 6379, // default value
+    password: 'XXXXX',
+    ttl: 600,
+  })
+  ```
+
+  ```typescript
+  // After
+
+  import { ioRedisStore, RedisCache } from '@tirke/node-cache-manager-ioredis'
+  import { caching } from 'cache-manager'
+
+  const redisCache: RedisCache = caching(ioRedisStore, {
+    host: 'localhost', // default value
+    port: 6379, // default value
+    password: 'XXXXX',
+    ttl: 600,
+  })
+  ```
+
 ## 2.1.0
 
 ### Minor Changes
