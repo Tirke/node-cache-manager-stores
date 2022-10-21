@@ -1,6 +1,6 @@
 {
   "name": "@tirke/node-cache-manager-ioredis",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "type": "commonjs",
   "repository": "https://github.com/Tirke/node-cache-manager-ioredis",
   "funding": "https://github.com/sponsors/tirke",
