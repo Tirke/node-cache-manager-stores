@@ -5,7 +5,7 @@ importers:
   .:
     specifiers:
       '@changesets/changelog-github': 0.4.7
-      '@changesets/cli': 2.25.0
+      '@changesets/cli': 2.25.1
       '@nrwl/cli': 15.0.0
       '@nrwl/eslint-plugin-nx': 15.0.0
       '@nrwl/jest': 15.0.0
@@ -36,7 +36,7 @@ importers:
       ioredis: 5.2.3
     devDependencies:
       '@changesets/changelog-github': 0.4.7
-      '@changesets/cli': 2.25.0
+      '@changesets/cli': 2.25.1
       '@nrwl/cli': 15.0.0_@swc+core@1.3.11
       '@nrwl/eslint-plugin-nx': 15.0.0_7x7oiiffnk2kujweeawxorffzm
       '@nrwl/jest': 15.0.0_dyngiqp3buhhh3xu66c6iykxf4
@@ -674,8 +674,8 @@ packages:
       - encoding
     dev: true
 
-  /@changesets/cli/2.25.0:
-    resolution: {integrity: sha512-Svu5KD2enurVHGEEzCRlaojrHjVYgF9srmMP9VQSy9c1TspX6C9lDPpulsSNIjYY9BuU/oiWpjBgR7RI9eQiAA==}
+  /@changesets/cli/2.25.1:
+    resolution: {integrity: sha512-e65ZJ7QKq7aERV/vAeuG0DTkkuEnTZK8eVNYqnd6wBsc9YTK+5iuuzp8aG0E80AngxeOaI4u77OIfzE9fv2T5Q==}
     hasBin: true
     dependencies:
       '@babel/runtime': 7.19.4
