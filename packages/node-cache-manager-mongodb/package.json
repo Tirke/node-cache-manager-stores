@@ -1,0 +1,22 @@
+{
+  "name": "@tirke/node-cache-manager-ioredis",
+  "version": "3.0.0",
+  "type": "commonjs",
+  "repository": "https://github.com/Tirke/node-cache-manager-mongodb",
+  "funding": "https://github.com/sponsors/tirke",
+  "author": {
+    "name": "Thomas",
+    "email": "tirke@tirke.dev",
+    "url": "https://tirke.dev"
+  },
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=14.20"
+  },
+  "publishConfig": {
+    "directory": "../../dist/packages/node-cache-manager-mongodb"
+  },
+  "dependencies": {
+    "mongodb": "^4.11.0"
+  }
+}

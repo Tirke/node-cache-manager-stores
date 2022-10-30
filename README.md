@@ -98,3 +98,4 @@ await redisCache.set('foo', 'bar', { ttl: 5 })
 const result = await redisCache.get('foo')
 await redisCache.del('foo')
 ```
+

@@ -13,8 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 14.x, 16.x, 18.x ]
-        redis-version: [ 5, 6, 7 ]
+        node-version: [14.x, 16.x, 18.x]
+        redis-version: [5, 6, 7]
+        mongodb-version: [4.4, 5.0, 6.0]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -32,13 +33,17 @@ jobs:
         uses: supercharge/redis-github-action@1.4.0
         with:
           redis-version: ${{ matrix.redis-version }}
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.8.0
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build
-        run: pnpm exec nx run-many --target=build --parallel
+        run: pnpm exec nx affected --target=build --parallel
       - name: Lint
-        run: pnpm exec nx run-many --target=lint --parallel
+        run: pnpm exec nx affected --target=lint --parallel
       - name: Test
-        run: pnpm exec nx run-many --target=test --parallel --coverage
+        run: pnpm exec nx affected --target=test --parallel --coverage
       - name: Upload coverage
         uses: codecov/codecov-action@v3

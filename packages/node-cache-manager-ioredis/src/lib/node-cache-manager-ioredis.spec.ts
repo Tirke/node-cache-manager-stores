@@ -123,11 +123,6 @@ describe('set', () => {
     expect(await redisCache.store.ttl('foo')).toEqual(-1)
   })
 
-  it('should store a value without callback', async () => {
-    await redisCache.set('foo', 'baz')
-    expect(await redisCache.get('foo')).toEqual('baz')
-  })
-
   it('should not store undefined', async () => {
     expect.assertions(1)
     await expect(redisCache.set('foo', undefined)).rejects.toEqual(Error('undefined is not cacheable'))
@@ -191,12 +186,6 @@ describe('get', () => {
     const cache = redisCache.store
     await cache.client.quit()
     await expect(redisCache.get('foo')).rejects.toEqual(Error('Connection is closed.'))
-  })
-
-  it('should retrieve a value using a callback', async () => {
-    const value = 'bar'
-    await redisCache.set('foo', value)
-    expect(await redisCache.get('foo')).toEqual(value)
   })
 
   it('should return null when the key is invalid', async () => {
@@ -378,11 +367,6 @@ describe('keys', () => {
   it('should return an array of keys for the given pattern', async () => {
     await redisCache.set('foo', 'bar')
     expect(await redisCache.store.keys('f*')).toEqual(['foo'])
-  })
-
-  it('should return an array of keys for the given pattern with callback', async () => {
-    await redisCache.set('foo', 'bar', 12)
-    expect(await redisCache.store.keys()).toEqual(['foo'])
   })
 
   it('should return an array of keys without pattern', async () => {

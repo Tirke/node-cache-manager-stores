@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "ncm": "packages/node-cache-manager-ioredis"
+    "ioredis": "packages/node-cache-manager-ioredis",
+    "mongo": "packages/node-cache-manager-mongodb"
   }
 }
