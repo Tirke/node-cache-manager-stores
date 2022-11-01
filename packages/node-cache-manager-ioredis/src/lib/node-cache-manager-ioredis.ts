@@ -121,7 +121,7 @@ class RedisStore implements IoRedisStore {
   }
 }
 
-export const ioRedisStore = async (args?: Args) => {
+export const ioRedisStore = (args?: Args) => {
   if (!args) {
     return new RedisStore({})
   }
