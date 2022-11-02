@@ -21,7 +21,7 @@ importers:
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': 5.42.0
       '@typescript-eslint/parser': 5.42.0
-      cache-manager: 5.1.2
+      cache-manager: 5.1.3
       eslint: 8.26.0
       eslint-config-prettier: 8.5.0
       eslint-plugin-import: 2.26.0
@@ -52,7 +52,7 @@ importers:
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': 5.42.0_6xw5wg2354iw4zujk2f3vyfrzu
       '@typescript-eslint/parser': 5.42.0_wyqvi574yv7oiwfeinomdzmc3m
-      cache-manager: 5.1.2
+      cache-manager: 5.1.3
       eslint: 8.26.0
       eslint-config-prettier: 8.5.0_eslint@8.26.0
       eslint-plugin-import: 2.26.0_5aea5dp4n23mfv4y2mmjxole3e
@@ -3113,8 +3113,8 @@ packages:
       base64-js: 1.5.1
       ieee754: 1.2.1
 
-  /cache-manager/5.1.2:
-    resolution: {integrity: sha512-X9JGcHmtYlJB0QgzYRDLsgiROcoCPwuWgXGfuJE9nkFny8HH59gmZ5d9uU4BeTnXksAGLZ8DT5E67QYz8I0RoQ==}
+  /cache-manager/5.1.3:
+    resolution: {integrity: sha512-6KhSzceh/1yBfm5QmSN2ohQsMsavLNPlOKZ8gWX7yDHBrnwNCGK6p4LYp189zRGNb3BLFioJlUZKQ3LckteWlg==}
     dependencies:
       lodash.clonedeep: 4.5.0
       lru-cache: 7.14.0
