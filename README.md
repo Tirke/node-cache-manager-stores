@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/Tirke/node-cache-manager-ioredis/branch/main/graph/badge.svg?token=8B6YUE99N3)](https://codecov.io/gh/Tirke/node-cache-manager-ioredis)
+[![codecov](https://codecov.io/gh/Tirke/node-cache-manager-stores/branch/main/graph/badge.svg?token=8B6YUE99N3)](https://codecov.io/gh/Tirke/node-cache-manager-stores)
 
 # Node cache manager stores
 

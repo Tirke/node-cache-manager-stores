@@ -1,5 +1,4 @@
-[![codecov](https://codecov.io/gh/Tirke/node-cache-manager-ioredis/branch/main/graph/badge.svg?token=8B6YUE99N3)](https://codecov.io/gh/Tirke/node-cache-manager-ioredis)
-[![npm version](https://badge.fury.io/js/@tirke%2Fnode-cache-manager-ioredis.svg)](https://badge.fury.io/js/@tirke%2Fnode-cache-manager-mongodb)
+[![npm version](https://badge.fury.io/js/@tirke%2Fnode-cache-manager-mongodb.svg)](https://badge.fury.io/js/@tirke%2Fnode-cache-manager-mongodb)
 
 # MongoDB store for node cache manager
 
