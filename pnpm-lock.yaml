@@ -11,7 +11,7 @@ importers:
       '@nrwl/jest': 15.0.4
       '@nrwl/js': 15.0.4
       '@nrwl/linter': 15.0.4
-      '@nrwl/nx-cloud': 15.0.1
+      '@nrwl/nx-cloud': 15.0.2
       '@nrwl/workspace': 15.0.4
       '@swc/cli': 0.1.57
       '@swc/core': 1.3.14
@@ -42,7 +42,7 @@ importers:
       '@nrwl/jest': 15.0.4_ndvinbaei2kbkxikqsq4bvcnr4
       '@nrwl/js': 15.0.4_5nstmtb7ur4mqaqeps7ojw52ii
       '@nrwl/linter': 15.0.4_self3eyzghaazmkjkz4swekrze
-      '@nrwl/nx-cloud': 15.0.1
+      '@nrwl/nx-cloud': 15.0.2
       '@nrwl/workspace': 15.0.4_w5s6buh74fxbn5a2hdwvba4mfi
       '@swc/cli': 0.1.57_@swc+core@1.3.14
       '@swc/core': 1.3.14
@@ -2085,8 +2085,8 @@ packages:
       - typescript
     dev: true
 
-  /@nrwl/nx-cloud/15.0.1:
-    resolution: {integrity: sha512-EvUxiXF/t8czg6ORWRZ3bTPfUHH45Z3VMubmnBEWmcB3IOXQu25Du7KmUCEAqjqb1spuWrsWRzSxkIrpz8Xl9g==}
+  /@nrwl/nx-cloud/15.0.2:
+    resolution: {integrity: sha512-DaTASuXmGyQHMxJuK6y3f7fs+Q0qQCfYDIDVGK9muNwN/QItLeWdRNltLQxbrBeS112kQTu2FPsr0DmRD60+0A==}
     hasBin: true
     dependencies:
       axios: 0.21.4
@@ -4599,7 +4599,7 @@ packages:
     hasBin: true
     dependencies:
       async: 3.2.4
-      chalk: 4.1.0
+      chalk: 4.1.2
       filelist: 1.0.4
       minimatch: 3.1.2
     dev: true
