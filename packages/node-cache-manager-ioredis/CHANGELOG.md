@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-ioredis
 
+## 3.0.1
+
+### Patch Changes
+
+- [`64805e9`](https://github.com/Tirke/node-cache-manager-stores/commit/64805e9d6d7b6697fa783c3c000ed555bc4a8726) Thanks [@Tirke](https://github.com/Tirke)! - Correct package.json github repo links
+
 ## 3.0.0
 
 ### Major Changes
