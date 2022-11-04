@@ -73,7 +73,7 @@ const instantiatedRedisCache = caching(ioRedisStore, {
 })
 ```
 
-### Generic usage with promises
+### Generic usage
 
 ```typescript
 import { ioRedisStore, RedisCache } from '@tirke/node-cache-manager-ioredis'

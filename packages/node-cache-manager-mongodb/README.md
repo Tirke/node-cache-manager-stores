@@ -34,7 +34,7 @@ const mongoCache = await caching(mongoDbStore, {
 })
 ```
 
-### Generic usage with promises
+### Generic usage
 
 ```typescript
 import { caching } from 'cache-manager'
