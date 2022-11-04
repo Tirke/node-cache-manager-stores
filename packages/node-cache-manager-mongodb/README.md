@@ -23,8 +23,6 @@ pnpm add @tirke/node-cache-manager-mongodb
 
 ### Init
 
-I wanted to provide more type-safe ways to init the `cache-manager`.
-
 ```typescript
 import { caching } from 'cache-manager'
 
