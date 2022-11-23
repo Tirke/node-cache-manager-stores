@@ -1,6 +1,6 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@1.6.4/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "Tirke/node-cache-manager-ioredis" }],
+  "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
+  "changelog": ["@svitejs/changesets-changelog-github-compact", { "repo": "Tirke/node-cache-manager-ioredis" }],
   "commit": false,
   "linked": [],
   "access": "public",

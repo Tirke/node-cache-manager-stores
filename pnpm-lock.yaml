@@ -4,7 +4,6 @@ importers:
 
   .:
     specifiers:
-      '@changesets/changelog-github': 0.4.7
       '@changesets/cli': 2.25.2
       '@nrwl/cli': 15.1.0
       '@nrwl/eslint-plugin-nx': 15.1.0
@@ -13,6 +12,7 @@ importers:
       '@nrwl/linter': 15.1.0
       '@nrwl/nx-cloud': 15.0.2
       '@nrwl/workspace': 15.1.0
+      '@svitejs/changesets-changelog-github-compact': 0.1.1
       '@swc/cli': 0.1.57
       '@swc/core': 1.3.19
       '@swc/jest': 0.2.23
@@ -35,7 +35,6 @@ importers:
     dependencies:
       ioredis: 5.2.4
     devDependencies:
-      '@changesets/changelog-github': 0.4.7
       '@changesets/cli': 2.25.2
       '@nrwl/cli': 15.1.0_@swc+core@1.3.19
       '@nrwl/eslint-plugin-nx': 15.1.0_5p57hoaxk63qdwutpfwenfn2ui
@@ -44,6 +43,7 @@ importers:
       '@nrwl/linter': 15.1.0_nwiwua7xlqaz4qq7fqh2g4iwl4
       '@nrwl/nx-cloud': 15.0.2
       '@nrwl/workspace': 15.1.0_lwtuuk25oldf72imkhxdizkw3y
+      '@svitejs/changesets-changelog-github-compact': 0.1.1
       '@swc/cli': 0.1.57_@swc+core@1.3.19
       '@swc/core': 1.3.19
       '@swc/jest': 0.2.23_@swc+core@1.3.19
@@ -63,6 +63,10 @@ importers:
       typescript: 4.9.3
       zx: 7.1.1
 
+  packages/node-cache-manager-fs:
+    specifiers: {}
+    publishDirectory: ../../dist/packages/node-cache-manager-fs
+
   packages/node-cache-manager-ioredis:
     specifiers:
       ioredis: ^5.2.2
@@ -70,12 +74,20 @@ importers:
       ioredis: 5.2.2
     publishDirectory: ../../dist/packages/node-cache-manager-ioredis
 
+  packages/node-cache-manager-memcached:
+    specifiers: {}
+    publishDirectory: ../../dist/packages/node-cache-manager-fs
+
   packages/node-cache-manager-mongodb:
     specifiers:
       mongodb: ^4.11.0
     dependencies:
       mongodb: 4.11.0
     publishDirectory: ../../dist/packages/node-cache-manager-mongodb
+
+  packages/node-cache-manager-sqlite:
+    specifiers: {}
+    publishDirectory: ../../dist/packages/node-cache-manager-fs
 
 packages:
 
@@ -1214,16 +1226,6 @@ packages:
       '@changesets/types': 5.2.0
     dev: true
 
-  /@changesets/changelog-github/0.4.7:
-    resolution: {integrity: sha512-UUG5sKwShs5ha1GFnayUpZNcDGWoY7F5XxhOEHS62sDPOtoHQZsG3j1nC5RxZ3M1URHA321cwVZHeXgu99Y3ew==}
-    dependencies:
-      '@changesets/get-github-info': 0.5.1
-      '@changesets/types': 5.2.0
-      dotenv: 8.6.0
-    transitivePeerDependencies:
-      - encoding
-    dev: true
-
   /@changesets/cli/2.25.2:
     resolution: {integrity: sha512-ACScBJXI3kRyMd2R8n8SzfttDHi4tmKSwVwXBazJOylQItSRSF4cGmej2E4FVf/eNfGy6THkL9GzAahU9ErZrA==}
     hasBin: true
@@ -2197,6 +2199,16 @@ packages:
     resolution: {integrity: sha512-BPS4ynJW/o92PUR4wgriz2Ud5gpST5vz6GQfMixEDK0Z8ZCUv2M7SkBLykH56T++Xs+8ln9zTGbOvNGIe02/jw==}
     dependencies:
       '@sinonjs/commons': 1.8.3
+    dev: true
+
+  /@svitejs/changesets-changelog-github-compact/0.1.1:
+    resolution: {integrity: sha512-eBi211CfmKtkxB6tINicaDPBMbolswPbaAy7kCx+uUFL/LxztLm9cB+7jP54TgCrv+mMz8vSJWIs/baH63PjsA==}
+    engines: {node: ^12.20 || ^14.13.1 || >= 16}
+    dependencies:
+      '@changesets/get-github-info': 0.5.1
+      dotenv: 16.0.3
+    transitivePeerDependencies:
+      - encoding
     dev: true
 
   /@swc/cli/0.1.57_@swc+core@1.3.19:
@@ -3477,9 +3489,9 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /dotenv/8.6.0:
-    resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
-    engines: {node: '>=10'}
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: true
 
   /duplexer/0.1.2:
