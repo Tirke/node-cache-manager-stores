@@ -13,7 +13,7 @@ importers:
       '@nrwl/nx-cloud': 15.0.2
       '@nrwl/workspace': 15.1.0
       '@svitejs/changesets-changelog-github-compact': 1.0.0
-      '@swc/cli': 0.1.58
+      '@swc/cli': 0.1.59
       '@swc/core': 1.3.24
       '@swc/jest': 0.2.24
       '@types/cache-manager': 4.0.2
@@ -44,7 +44,7 @@ importers:
       '@nrwl/nx-cloud': 15.0.2
       '@nrwl/workspace': 15.1.0_y37ktpj4rtpj7rii52un3lxytm
       '@svitejs/changesets-changelog-github-compact': 1.0.0
-      '@swc/cli': 0.1.58_@swc+core@1.3.24
+      '@swc/cli': 0.1.59_@swc+core@1.3.24
       '@swc/core': 1.3.24
       '@swc/jest': 0.2.24_@swc+core@1.3.24
       '@types/cache-manager': 4.0.2
@@ -2198,11 +2198,10 @@ packages:
       - encoding
     dev: true
 
-  /@swc/cli/0.1.58_@swc+core@1.3.24:
-    resolution: {integrity: sha512-6Wjxs783ni/O1tshHkof2g/L3uAJgfpo/bV0aeibCrRRHfaDTqw/bToY260Mu9T/1bewdb/yWW8IbW1nxUGihA==}
+  /@swc/cli/0.1.59_@swc+core@1.3.24:
+    resolution: {integrity: sha512-BlX3wIxYTwdtR22dIqZ3FEIOJPqnlByAp4JY46OMZi2UXMB3ZbOzefawD2ZlLafRUWyy5NtiZZty5waKzaYRnA==}
     engines: {node: '>= 12.13'}
     hasBin: true
-    requiresBuild: true
     peerDependencies:
       '@swc/core': ^1.2.66
       chokidar: ^3.5.1
