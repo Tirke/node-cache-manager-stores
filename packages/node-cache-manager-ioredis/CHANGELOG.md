@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-ioredis
 
+## 3.2.0
+
+### Minor Changes
+
+- Fix published package of ioredis ([`802b538`](https://github.com/Tirke/node-cache-manager-stores/commit/802b538b7eab990aeb90612ee1122f7bbfb4071b))
+
 ## 3.1.0
 
 ### Minor Changes
