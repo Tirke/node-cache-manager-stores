@@ -9,12 +9,18 @@
     "email": "tirke@tirke.dev",
     "url": "https://tirke.dev"
   },
-  "main": "src/index.js",
+  "main": "./dist/packages/node-cache-manager-ioredis/index.js",
+  "module": "./dist/packages/node-cache-manager-ioredis/index.mjs",
+  "types": "./dist/packages/node-cache-manager-ioredis/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/packages/node-cache-manager-ioredis/index.js",
+      "import": "./dist/packages/node-cache-manager-ioredis/index.mjs",
+      "types": "./dist/packages/node-cache-manager-ioredis/index.d.ts"
+    }
+  },
   "engines": {
     "node": ">=14.20"
-  },
-  "publishConfig": {
-    "directory": "../../dist/packages/node-cache-manager-ioredis"
   },
   "dependencies": {
     "ioredis": "^5.2.2"
