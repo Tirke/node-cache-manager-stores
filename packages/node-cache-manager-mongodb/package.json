@@ -1,6 +1,6 @@
 {
   "name": "@tirke/node-cache-manager-mongodb",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "type": "commonjs",
   "repository": "https://github.com/Tirke/node-cache-manager-stores",
   "funding": "https://github.com/sponsors/tirke",
