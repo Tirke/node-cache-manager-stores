@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-mongodb
 
+## 1.1.0
+
+### Minor Changes
+
+- Publish mongodb package with ESM and CJS files ([`5a6ff50`](https://github.com/Tirke/node-cache-manager-stores/commit/5a6ff504270321fcce48c2049de0be59a93e563a))
+
 ## 1.0.1
 
 ### Patch Changes
