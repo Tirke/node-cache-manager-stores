@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-ioredis
 
+## 3.1.0
+
+### Minor Changes
+
+- IoRedis package is now bundled with ESM and CJS compatibility ([#145](https://github.com/Tirke/node-cache-manager-stores/pull/145))
+
 ## 3.0.1
 
 ### Patch Changes
