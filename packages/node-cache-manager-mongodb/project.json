@@ -5,13 +5,19 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:swc",
+      "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/node-cache-manager-mongodb",
-        "main": "packages/node-cache-manager-mongodb/src/index.ts",
-        "tsConfig": "packages/node-cache-manager-mongodb/tsconfig.lib.json",
-        "assets": ["packages/node-cache-manager-mongodb/*.md"]
+        "outputPath": "dist/packages/node-cache-manager-ioredis",
+        "parallel": false,
+        "commands": [
+          {
+            "command": "tsup --format cjs,esm --outDir dist/packages/node-cache-manager-mongodb --dts --clean packages/node-cache-manager-mongodb/src/index.ts"
+          },
+          {
+            "command": "cp packages/node-cache-manager-mongodb/package.json dist/packages/node-cache-manager-mongodb"
+          }
+        ]
       }
     },
     "lint": {
