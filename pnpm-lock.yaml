@@ -74,6 +74,7 @@ importers:
       ioredis: ^5.2.2
     dependencies:
       ioredis: 5.2.2
+    publishDirectory: ../../dist/packages/node-cache-manager-ioredis
 
   packages/node-cache-manager-memcached:
     specifiers: {}
