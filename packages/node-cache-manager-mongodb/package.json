@@ -26,6 +26,6 @@
     "directory": "../../dist/packages/node-cache-manager-mongodb"
   },
   "dependencies": {
-    "mongodb": "^4.11.0"
+    "mongodb": "^5.0.0"
   }
 }
