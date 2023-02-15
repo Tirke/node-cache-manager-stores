@@ -30,7 +30,7 @@ importers:
       nx: 15.6.3
       prettier: 2.8.4
       ts-node: 10.9.1
-      tsup: 6.6.2
+      tsup: 6.6.3
       typescript: 4.9.5
       zx: 7.1.1
     dependencies:
@@ -61,7 +61,7 @@ importers:
       nx: 15.6.3_@swc+core@1.3.35
       prettier: 2.8.4
       ts-node: 10.9.1_dw7jtijrk27gztdspbxckb4nzu
-      tsup: 6.6.2_jhsyo3geulxkbplmk547u3b2ce
+      tsup: 6.6.3_jhsyo3geulxkbplmk547u3b2ce
       typescript: 4.9.5
       zx: 7.1.1
 
@@ -8090,9 +8090,9 @@ packages:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
     dev: true
 
-  /tsup/6.6.2_jhsyo3geulxkbplmk547u3b2ce:
-    resolution: {integrity: sha512-+yQ6SI4rVtp1+YpcYOePumJLEVQ896CDNRt9dJ2L/DeMnLf1+FTOCVw5eioLBH0xLdHgogO9NQ6vPNF5MfkSJw==}
-    engines: {node: '>=14'}
+  /tsup/6.6.3_jhsyo3geulxkbplmk547u3b2ce:
+    resolution: {integrity: sha512-OLx/jFllYlVeZQ7sCHBuRVEQBBa1tFbouoc/gbYakyipjVQdWy/iQOvmExUA/ewap9iQ7tbJf9pW0PgcEFfJcQ==}
+    engines: {node: '>=14.18'}
     hasBin: true
     peerDependencies:
       '@swc/core': ^1
