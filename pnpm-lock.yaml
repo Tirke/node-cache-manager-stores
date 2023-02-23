@@ -20,7 +20,7 @@ importers:
       '@types/node': 18.14.0
       '@typescript-eslint/eslint-plugin': 5.53.0
       '@typescript-eslint/parser': 5.53.0
-      cache-manager: 5.1.6
+      cache-manager: 5.1.7
       eslint: 8.34.0
       eslint-config-prettier: 8.6.0
       eslint-plugin-import: 2.27.5
@@ -53,7 +53,7 @@ importers:
       '@types/node': 18.14.0
       '@typescript-eslint/eslint-plugin': 5.53.0_ny4s7qc6yg74faf3d6xty2ofzy
       '@typescript-eslint/parser': 5.53.0_7kw3g6rralp5ps6mg3uyzz6azm
-      cache-manager: 5.1.6
+      cache-manager: 5.1.7
       eslint: 8.34.0
       eslint-config-prettier: 8.6.0_eslint@8.34.0
       eslint-plugin-import: 2.27.5_dbs2zxbe2aiqaiiio3svelvkai
@@ -3657,11 +3657,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /cache-manager/5.1.6:
-    resolution: {integrity: sha512-Q1A8ESC9sPgjSebfJl7DWUjcm3Sf5E4b5D9dspy0XCNYLMhcMOrPyTDVTYDDtpVk9JRt3uercpWZAlCsfhlDYQ==}
+  /cache-manager/5.1.7:
+    resolution: {integrity: sha512-2W43F4ruaYb7dSiCOqkKtpnmn51/3DqxbKMMTxHfLa6qtj1letd8rr17/P/c7D7wYViqQLa+LetLCoKSVwBN1w==}
     dependencies:
       lodash.clonedeep: 4.5.0
-      lru-cache: 7.14.0
+      lru-cache: 7.17.0
     dev: true
 
   /cacheable-lookup/5.0.4:
@@ -6559,8 +6559,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lru-cache/7.14.0:
-    resolution: {integrity: sha512-EIRtP1GrSJny0dqb50QXRUNBxHJhcpxHC++M5tD7RYbvLLn5KVWKsbyswSSqDuU15UFi3bgTQIY8nhDMeF6aDQ==}
+  /lru-cache/7.17.0:
+    resolution: {integrity: sha512-zSxlVVwOabhVyTi6E8gYv2cr6bXK+8ifYz5/uyJb9feXX6NACVDwY4p5Ut3WC3Ivo/QhpARHU3iujx2xGAYHbQ==}
     engines: {node: '>=12'}
     dev: true
 
