@@ -10,7 +10,7 @@ importers:
       '@nrwl/jest': 15.6.3
       '@nrwl/js': 15.6.3
       '@nrwl/linter': 15.6.3
-      '@nrwl/nx-cloud': 15.1.1
+      '@nrwl/nx-cloud': 15.2.0
       '@nrwl/workspace': 15.6.3
       '@svitejs/changesets-changelog-github-compact': 1.1.0
       '@swc/cli': 0.1.62
@@ -43,7 +43,7 @@ importers:
       '@nrwl/jest': 15.6.3_6t4sg27g7espopmlna2d5vaf4a
       '@nrwl/js': 15.6.3_pkm3i3nkvexgx7b4tq2ss7vaha
       '@nrwl/linter': 15.6.3_fodnqhs3ec7hp4jfaxokwvpbqi
-      '@nrwl/nx-cloud': 15.1.1
+      '@nrwl/nx-cloud': 15.2.0
       '@nrwl/workspace': 15.6.3_3ibqkr25yjypu32ffddv63zxyu
       '@svitejs/changesets-changelog-github-compact': 1.1.0
       '@swc/cli': 0.1.62_@swc+core@1.3.38
@@ -2506,8 +2506,8 @@ packages:
       - typescript
     dev: true
 
-  /@nrwl/nx-cloud/15.1.1:
-    resolution: {integrity: sha512-aIVb87PQpAjwdEaFksQ3rYgFq9MDaBG2KvYZcj/k+z2uWeWH84ha/opO37aCFLf5VXNiyJZGRb/+7vW7BFpNOw==}
+  /@nrwl/nx-cloud/15.2.0:
+    resolution: {integrity: sha512-Wzg4mX9Rb5pzP0yrVJzVTnHaqz59Glv740QTDux2QFErHU6nT+nvfoTCQ1B6a2lhkHxJodx+PoDy9UYRUz0IlQ==}
     hasBin: true
     dependencies:
       axios: 0.21.4
