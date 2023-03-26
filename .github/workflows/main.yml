@@ -36,11 +36,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build
-        run: pnpm exec nx affected --target=build --all --parallel
+        run: pnpm exec nx run-many --target=build --all
       - name: Lint
-        run: pnpm exec nx affected --target=lint --all --parallel
+        run: pnpm exec nx run-many --target=lint --all
       - name: Test
-        run: pnpm exec nx affected --target=test --all --parallel --coverage
+        run: pnpm exec nx run-many --target=test --all
       - name: Upload coverage
         uses: codecov/codecov-action@v3
   publishing:
@@ -64,7 +64,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build
-        run: pnpm exec nx affected --target=build --all --parallel
+        run: pnpm exec nx run-many --target=build --all --skip-nx-cache
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
