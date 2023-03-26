@@ -4,4 +4,4 @@ module.exports = {
   coverageReporters: ['text', 'cobertura', 'html'],
   moduleFileExtensions: ['ts', 'js', 'mjs', 'html'],
   testEnvironment: 'node',
-};
+}

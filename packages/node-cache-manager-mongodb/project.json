@@ -1,5 +1,5 @@
 {
-  "name": "node-cache-manager-mongodb",
+  "name": "mongo",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/node-cache-manager-mongodb/src",
   "projectType": "library",

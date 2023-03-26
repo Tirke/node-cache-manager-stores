@@ -1,5 +1,5 @@
 {
-  "name": "node-cache-manager-ioredis",
+  "name": "ioredis",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/node-cache-manager-ioredis/src",
   "projectType": "library",
