@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@7.30.3",
+  "packageManager": "pnpm@7.30.5",
   "scripts": {
     "release": "zx tools/scripts/patch-package-publish-config.mjs && pnpm exec changeset publish"
   },
