@@ -11,8 +11,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x, 18.x]
-        redis-version: [6, 7]
-        mongodb-version: [5.0, 6.0]
+        tools-version: [[5, 4.4], [6, 5.0], [7, 6.0]]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -25,14 +24,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-      - name: Start Redis ${{ matrix.redis-version }}
+      - name: Start Redis ${{ matrix.tools-version[0] }}
         uses: supercharge/redis-github-action@1.5.0
         with:
-          redis-version: ${{ matrix.redis-version }}
-      - name: Start MongoDB
+          redis-version: ${{ matrix.tools-version[0] }}
+      - name: Start MongoDB ${{ matrix.tools-version[1] }}
         uses: supercharge/mongodb-github-action@v1.9.0
         with:
-          mongodb-version: ${{ matrix.mongodb-version }}
+          mongodb-version: ${{ matrix.tools-version[1] }}
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build
