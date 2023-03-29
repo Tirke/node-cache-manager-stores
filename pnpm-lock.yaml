@@ -30,8 +30,8 @@ importers:
         specifier: 15.8.9
         version: 15.8.9(@swc/core@1.3.42)(eslint@8.37.0)(nx@15.8.9)(prettier@2.8.7)(typescript@5.0.2)
       '@nrwl/nx-cloud':
-        specifier: 15.3.2
-        version: 15.3.2
+        specifier: 15.3.3
+        version: 15.3.3
       '@nrwl/workspace':
         specifier: 15.8.9
         version: 15.8.9(@swc/core@1.3.42)(eslint@8.37.0)(prettier@2.8.7)(typescript@5.0.2)
@@ -2740,8 +2740,8 @@ packages:
       - typescript
     dev: true
 
-  /@nrwl/nx-cloud@15.3.2:
-    resolution: {integrity: sha512-fga4duqcrkyT3djQpyRp8god3trb18hb+Tv0CYRrCcdNDHhzb6LOrxnenrFsjPjt38hyCdyu/ZYmHI/lQXyhAw==}
+  /@nrwl/nx-cloud@15.3.3:
+    resolution: {integrity: sha512-zU+0YwN2M+G8Z9RjcsIbya6jgTB1SBGhqCXOb/CdwLnCHylAP0T6f9vaQibZE1BhI6doM+betqY0FvPazTjd8g==}
     hasBin: true
     dependencies:
       axios: 0.21.4
@@ -5198,7 +5198,7 @@ packages:
     resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
     engines: {node: '>=12'}
     dependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jsonfile: 6.1.0
       universalify: 2.0.0
     dev: true
@@ -5207,7 +5207,7 @@ packages:
     resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
     engines: {node: '>=14.14'}
     dependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jsonfile: 6.1.0
       universalify: 2.0.0
     dev: true
@@ -5216,7 +5216,7 @@ packages:
     resolution: {integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==}
     engines: {node: '>=6 <7 || >=8'}
     dependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jsonfile: 4.0.0
       universalify: 0.1.2
     dev: true
@@ -6810,7 +6810,7 @@ packages:
     resolution: {integrity: sha512-OfCBkGEw4nN6JLtgRidPX6QxjBQGQf72q3si2uvqyFEMbycSFFHwAZeXx6cJgFM9wmLrf9zBwCP3Ivqa+LLZPw==}
     engines: {node: '>=6'}
     dependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       js-yaml: 3.14.1
       pify: 4.0.1
       strip-bom: 3.0.0
