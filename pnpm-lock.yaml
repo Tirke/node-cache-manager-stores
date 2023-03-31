@@ -30,8 +30,8 @@ importers:
         specifier: 15.8.9
         version: 15.8.9(@swc/core@1.3.44)(eslint@8.37.0)(nx@15.8.9)(prettier@2.8.7)(typescript@5.0.3)
       '@nrwl/nx-cloud':
-        specifier: 15.3.3
-        version: 15.3.3
+        specifier: 15.3.4
+        version: 15.3.4
       '@nrwl/workspace':
         specifier: 15.8.9
         version: 15.8.9(@swc/core@1.3.44)(eslint@8.37.0)(prettier@2.8.7)(typescript@5.0.3)
@@ -2740,8 +2740,8 @@ packages:
       - typescript
     dev: true
 
-  /@nrwl/nx-cloud@15.3.3:
-    resolution: {integrity: sha512-zU+0YwN2M+G8Z9RjcsIbya6jgTB1SBGhqCXOb/CdwLnCHylAP0T6f9vaQibZE1BhI6doM+betqY0FvPazTjd8g==}
+  /@nrwl/nx-cloud@15.3.4:
+    resolution: {integrity: sha512-dBMyUK8coOxr9CeCnmhNh+e1kjvDhPuBvyoK6iIKPCI+H1brDIUAuRiKWrrOQpxruJYClFtEYXgV6wWpApeeaw==}
     hasBin: true
     dependencies:
       axios: 0.21.4

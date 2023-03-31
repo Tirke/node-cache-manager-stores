@@ -18,7 +18,7 @@
     "@nrwl/jest": "15.8.9",
     "@nrwl/js": "15.8.9",
     "@nrwl/linter": "15.8.9",
-    "@nrwl/nx-cloud": "15.3.3",
+    "@nrwl/nx-cloud": "15.3.4",
     "@nrwl/workspace": "15.8.9",
     "@svitejs/changesets-changelog-github-compact": "1.1.0",
     "@swc/cli": "0.1.62",
