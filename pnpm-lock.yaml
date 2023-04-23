@@ -60,8 +60,8 @@ importers:
         specifier: 5.59.0
         version: 5.59.0(eslint@8.39.0)(typescript@5.0.4)
       cache-manager:
-        specifier: 5.2.0
-        version: 5.2.0
+        specifier: 5.2.1
+        version: 5.2.1
       eslint:
         specifier: 8.39.0
         version: 8.39.0
@@ -4054,11 +4054,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /cache-manager@5.2.0:
-    resolution: {integrity: sha512-jwXDLtn8tQGS2vGDTKAhee2OhuX/2cgxlh97fqMnWp328VszIn064BFyKZ87dwp9GmlBFuHYfaVQehI85hFwIw==}
+  /cache-manager@5.2.1:
+    resolution: {integrity: sha512-qYHx0DlM0mepUqXkpDg83K1dYEXOinq9+sYdHxs1c5LQjR1MPgm34im+JVtsy9+uoeE2T1JLzJSAB+nV4IH5dQ==}
     dependencies:
       lodash.clonedeep: 4.5.0
-      lru-cache: 7.18.3
+      lru-cache: 9.1.1
     dev: true
 
   /cacheable-lookup@5.0.4:
@@ -6877,9 +6877,9 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lru-cache@7.18.3:
-    resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
-    engines: {node: '>=12'}
+  /lru-cache@9.1.1:
+    resolution: {integrity: sha512-65/Jky17UwSb0BuB9V+MyDpsOtXKmYwzhyl+cOa9XUiI4uV2Ouy/2voFP3+al0BjZbJgMBD8FojMpAf+Z+qn4A==}
+    engines: {node: 14 || >=16.14}
     dev: true
 
   /make-dir@3.1.0:
