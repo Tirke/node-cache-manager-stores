@@ -23,7 +23,8 @@
     "node": ">=14.20"
   },
   "publishConfig": {
-    "directory": "../../dist/packages/node-cache-manager-mongodb"
+    "directory": "../../dist/packages/node-cache-manager-mongodb",
+    "provenance": true
   },
   "dependencies": {
     "mongodb": "^5.0.0"

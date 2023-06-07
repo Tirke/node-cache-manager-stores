@@ -23,7 +23,8 @@
     "node": ">=14.20"
   },
   "publishConfig": {
-    "directory": "../../dist/packages/node-cache-manager-ioredis"
+    "directory": "../../dist/packages/node-cache-manager-ioredis",
+    "provenance": true
   },
   "dependencies": {
     "ioredis": "^5.2.2"
