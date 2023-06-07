@@ -15,6 +15,9 @@
           },
           {
             "command": "cp packages/node-cache-manager-mongodb/package.json dist/packages/node-cache-manager-mongodb"
+          },
+          {
+            "command": "cp packages/node-cache-manager-mongodb/README.md dist/packages/node-cache-manager-mongodb"
           }
         ]
       }

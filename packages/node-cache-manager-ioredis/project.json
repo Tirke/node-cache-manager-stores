@@ -15,6 +15,9 @@
           },
           {
             "command": "cp packages/node-cache-manager-ioredis/package.json dist/packages/node-cache-manager-ioredis"
+          },
+          {
+            "command": "cp packages/node-cache-manager-ioredis/README.md dist/packages/node-cache-manager-ioredis"
           }
         ]
       }
