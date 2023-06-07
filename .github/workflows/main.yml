@@ -5,8 +5,7 @@ on:
     branches:
       - main
 
-permissions:
-  id-token: write
+permissions: write-all
 
 jobs:
   testing:
