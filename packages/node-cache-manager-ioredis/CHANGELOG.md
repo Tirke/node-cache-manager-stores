@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-ioredis
 
+## 3.3.0
+
+### Minor Changes
+
+- Generate provenance status ([`d3686c0`](https://github.com/Tirke/node-cache-manager-stores/commit/d3686c0be5c8fc930f40f76023fc88a35803ff50))
+
 ## 3.2.0
 
 ### Minor Changes
