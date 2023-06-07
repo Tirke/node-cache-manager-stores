@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-mongodb
 
+## 1.2.0
+
+### Minor Changes
+
+- Generate provenance status ([`d3686c0`](https://github.com/Tirke/node-cache-manager-stores/commit/d3686c0be5c8fc930f40f76023fc88a35803ff50))
+
 ## 1.1.0
 
 ### Minor Changes
