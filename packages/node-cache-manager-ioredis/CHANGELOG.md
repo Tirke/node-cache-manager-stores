@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-ioredis
 
+## 3.4.0
+
+### Minor Changes
+
+- Include READMEs and fixed provenance statement ([`32729e1`](https://github.com/Tirke/node-cache-manager-stores/commit/32729e1300186f55fad3ead90435082534b7341c))
+
 ## 3.3.0
 
 ### Minor Changes
