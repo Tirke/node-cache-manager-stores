@@ -27,7 +27,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - name: Start Redis ${{ matrix.tools-version[0] }}
-        uses: supercharge/redis-github-action@1.5.0
+        uses: supercharge/redis-github-action@1.6.0
         with:
           redis-version: ${{ matrix.tools-version[0] }}
       - name: Start MongoDB ${{ matrix.tools-version[1] }}
