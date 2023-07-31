@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0
       - uses: nrwl/nx-set-shas@v3.0.2
       - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.4
+        uses: pnpm/action-setup@v2.4.0
       - name: Install node ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
