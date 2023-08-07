@@ -27,6 +27,10 @@ pnpm add @tirke/node-cache-manager-ioredis
 All examples have changed a bit since the new major version of `node-cache-manager`
 Everything is now based on promises everywhere, no more callbacks.
 
+### TTL
+
+TTL value is forwarded directly to ioredis which uses seconds as unit.
+
 ### Init
 
 I wanted to provide more type-safe ways to init the `cache-manager`.
