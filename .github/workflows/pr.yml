@@ -33,7 +33,7 @@ jobs:
         with:
           redis-version: ${{ matrix.tools-version[0] }}
       - name: Start MongoDB ${{ matrix.tools-version[1] }}
-        uses: supercharge/mongodb-github-action@v1.9.0
+        uses: supercharge/mongodb-github-action@v1.10.0
         with:
           mongodb-version: ${{ matrix.tools-version[1] }}
       - name: Install dependencies
