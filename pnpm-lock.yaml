@@ -12,8 +12,8 @@ importers:
         specifier: ^5.3.2
         version: 5.3.2
       mongodb:
-        specifier: ^5.6.0
-        version: 5.6.0
+        specifier: ^6.0.0
+        version: 6.0.0
     devDependencies:
       '@changesets/cli':
         specifier: 2.26.2
@@ -104,8 +104,8 @@ importers:
   packages/node-cache-manager-mongodb:
     dependencies:
       mongodb:
-        specifier: ^5.0.0
-        version: 5.0.1
+        specifier: ^6.0.0
+        version: 6.0.0
     publishDirectory: ../../dist/packages/node-cache-manager-mongodb
 
 packages:
@@ -2467,6 +2467,12 @@ packages:
       os-filter-obj: 2.0.0
     dev: true
 
+  /@mongodb-js/saslprep@1.1.0:
+    resolution: {integrity: sha512-Xfijy7HvfzzqiOAhAepF4SGN5e9leLkMvg/OPOF97XemjfVCYN/oWa75wnkc6mltMSTwY+XlbhWgUOJmkFspSw==}
+    dependencies:
+      sparse-bitfield: 3.0.3
+    dev: false
+
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -3869,14 +3875,9 @@ packages:
       node-int64: 0.4.0
     dev: true
 
-  /bson@5.0.0:
-    resolution: {integrity: sha512-EL2KpZdyhshyyptj6pnQfnFKPoncD9KwZYvgmj/FXQiOUU1HWTHWmBOP4TZXU3YzStcI5qgpIl68YnMo16s26A==}
-    engines: {node: '>=14.20.1'}
-    dev: false
-
-  /bson@5.3.0:
-    resolution: {integrity: sha512-ukmCZMneMlaC5ebPHXIkP8YJzNl5DC41N5MAIvKDqLggdao342t4McltoJBQfQya/nHBWAcSsYRqlXPoQkTJag==}
-    engines: {node: '>=14.20.1'}
+  /bson@6.1.0:
+    resolution: {integrity: sha512-yiQ3KxvpVoRpx1oD1uPz4Jit9tAVTJgjdmjDKtUErkOoL9VNoF8Dd58qtAOL5E40exx2jvAT9sqdRSK/r+SHlA==}
+    engines: {node: '>=16.20.1'}
     dev: false
 
   /buffer-from@1.1.2:
@@ -5473,10 +5474,6 @@ packages:
       - supports-color
     dev: false
 
-  /ip@2.0.0:
-    resolution: {integrity: sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ==}
-    dev: false
-
   /is-array-buffer@3.0.2:
     resolution: {integrity: sha512-y+FyyR/w8vfIRq4eQcM1EYgSTnmHXPqaF+IgzgraytCFq5Xh8lllDVmAZolPJiZttZLeFSINPYMaEJ7/vWUa1w==}
     dependencies:
@@ -6740,7 +6737,6 @@ packages:
     resolution: {integrity: sha512-ZS4Bp4r/Zoeq6+NLJpP+0Zzm0pR8whtGPf1XExKLJBAczGMnSi3It14OiNCStjQjM6NU1okjQGSxgEZN8eBYKg==}
     requiresBuild: true
     dev: false
-    optional: true
 
   /meow@6.1.1:
     resolution: {integrity: sha512-3YffViIt2QWgTy6Pale5QpopX/IvU3LPL03jOTqp6pGj3VjesdO/U8CuHMKpnQr4shCNCM5fd5XFFvIIl6JBHg==}
@@ -6873,48 +6869,36 @@ packages:
       whatwg-url: 11.0.0
     dev: false
 
-  /mongodb@5.0.1:
-    resolution: {integrity: sha512-KpjtY+NWFmcic6UDYEdfn768ZTuKyv7CRaui7ZSd6q/0/o1AURMC7KygTUwB1Cl8V10Pe5NiP+Y2eBMCDs/ygQ==}
-    engines: {node: '>=14.20.1'}
+  /mongodb@6.0.0:
+    resolution: {integrity: sha512-wUIYesF4DTyDccm0noE5TwGi9ISdXUAi9T2cQ4xPc+EUBZG44bfMVt2ecOG5Ypca7eCz3oRpJm6YI6c7jAnuNw==}
+    engines: {node: '>=16.20.1'}
     peerDependencies:
-      '@aws-sdk/credential-providers': ^3.201.0
-      mongodb-client-encryption: ^2.3.0
+      '@aws-sdk/credential-providers': ^3.188.0
+      '@mongodb-js/zstd': ^1.1.0
+      gcp-metadata: ^5.2.0
+      kerberos: ^2.0.1
+      mongodb-client-encryption: '>=6.0.0 <7'
       snappy: ^7.2.2
+      socks: ^2.7.1
     peerDependenciesMeta:
       '@aws-sdk/credential-providers':
+        optional: true
+      '@mongodb-js/zstd':
+        optional: true
+      gcp-metadata:
+        optional: true
+      kerberos:
         optional: true
       mongodb-client-encryption:
         optional: true
       snappy:
         optional: true
-    dependencies:
-      bson: 5.0.0
-      mongodb-connection-string-url: 2.6.0
-      socks: 2.7.1
-    optionalDependencies:
-      saslprep: 1.0.3
-    dev: false
-
-  /mongodb@5.6.0:
-    resolution: {integrity: sha512-z8qVs9NfobHJm6uzK56XBZF8XwM9H294iRnB7wNjF0SnY93si5HPziIJn+qqvUR5QOff/4L0gCD6SShdR/GtVQ==}
-    engines: {node: '>=14.20.1'}
-    peerDependencies:
-      '@aws-sdk/credential-providers': ^3.201.0
-      mongodb-client-encryption: '>=2.3.0 <3'
-      snappy: ^7.2.2
-    peerDependenciesMeta:
-      '@aws-sdk/credential-providers':
-        optional: true
-      mongodb-client-encryption:
-        optional: true
-      snappy:
+      socks:
         optional: true
     dependencies:
-      bson: 5.3.0
+      '@mongodb-js/saslprep': 1.1.0
+      bson: 6.1.0
       mongodb-connection-string-url: 2.6.0
-      socks: 2.7.1
-    optionalDependencies:
-      saslprep: 1.0.3
     dev: false
 
   /ms@2.1.2:
@@ -7710,15 +7694,6 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /saslprep@1.0.3:
-    resolution: {integrity: sha512-/MY/PEMbk2SuY5sScONwhUDsV2p77Znkb/q3nSVstq/yQzYJOH/Azh29p9oJLsl3LnQwSvZDKagDGBsBwSooag==}
-    engines: {node: '>=6'}
-    requiresBuild: true
-    dependencies:
-      sparse-bitfield: 3.0.3
-    dev: false
-    optional: true
-
   /semver-regex@4.0.5:
     resolution: {integrity: sha512-hunMQrEy1T6Jr2uEVjrAIqjwWcQTgOAcIM52C8MY1EZSD3DDNft04XzvYKPqjED65bNVVko0YI38nYeEHCX3yw==}
     engines: {node: '>=12'}
@@ -7819,11 +7794,6 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /smart-buffer@4.2.0:
-    resolution: {integrity: sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==}
-    engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
-    dev: false
-
   /smartwrap@2.0.2:
     resolution: {integrity: sha512-vCsKNQxb7PnCNd2wY1WClWifAc2lwqsG8OaswpJkVJsvMGcnEntdTCDajZCkk93Ay1U3t/9puJmb525Rg5MZBA==}
     engines: {node: '>=6'}
@@ -7836,14 +7806,6 @@ packages:
       wcwidth: 1.0.1
       yargs: 15.4.1
     dev: true
-
-  /socks@2.7.1:
-    resolution: {integrity: sha512-7maUZy1N7uo6+WVEX6psASxtNlKaNVMlGQKkG/63nEDdLOWNbiUMoLK7X4uYoLhQstau72mLgfEWcXcwsaHbYQ==}
-    engines: {node: '>= 10.13.0', npm: '>= 3.0.0'}
-    dependencies:
-      ip: 2.0.0
-      smart-buffer: 4.2.0
-    dev: false
 
   /sort-keys-length@1.0.1:
     resolution: {integrity: sha512-GRbEOUqCxemTAk/b32F2xa8wDTs+Z1QHOkbhJDQTvv/6G3ZkbJ+frYWsTcc7cBB3Fu4wy4XlLCuNtJuMn7Gsvw==}
@@ -7896,7 +7858,6 @@ packages:
     dependencies:
       memory-pager: 1.5.0
     dev: false
-    optional: true
 
   /spawndamnit@2.0.0:
     resolution: {integrity: sha512-j4JKEcncSjFlqIwU5L/rp2N5SIPsdxaRsIv678+TZxZ0SRDJTm8JrxJMjE/XuiEZNEir3S8l0Fa3Ke339WI4qA==}
