@@ -27,6 +27,6 @@
     "provenance": true
   },
   "dependencies": {
-    "mongodb": "^5.0.0"
+    "mongodb": "^6.0.0"
   }
 }
