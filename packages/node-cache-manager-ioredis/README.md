@@ -101,3 +101,26 @@ await redisCache.set('foo', 'bar', { ttl: 5 })
 const result = await redisCache.get('foo')
 await redisCache.del('foo')
 ```
+
+### Flush all DBs
+```typescript
+import { ioRedisStore, RedisCache } from '@tirke/node-cache-manager-ioredis'
+import { caching } from 'cache-manager'
+
+const redisCache: RedisCache = caching(ioRedisStore, {
+  host: 'localhost', // default value
+  port: 6379, // default value
+  password: 'XXXXX',
+  ttl: 600,
+})
+
+// listen for redis connection error event
+const cache = redisCache.store
+cache.client.on('error', (error: unknown) => {
+  // handle error here
+  console.log(error)
+})
+
+// it uses `flushall` under the hood, so it drops all DBs
+await redisCache.reset()
+```
