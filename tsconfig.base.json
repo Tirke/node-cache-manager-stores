@@ -5,12 +5,7 @@
     "baseUrl": ".",
     "module": "commonjs",
     "target": "es2019",
-    "lib": [
-      "ES2019",
-      "ES2020.String",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2019", "ES2020.String", "DOM", "DOM.Iterable"],
     "moduleResolution": "node",
     "declaration": true,
     "sourceMap": true,
@@ -28,16 +23,9 @@
     "useDefineForClassFields": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@node-cache-manager-ioredis/node-cache-manager-ioredis": [
-        "packages/node-cache-manager-ioredis/src/index.ts"
-      ],
-      "@node-cache-manager-mongodb/node-cache-manager-mongodb": [
-        "packages/node-cache-manager-mongodb/src/index.ts"
-      ]
+      "@node-cache-manager-ioredis/node-cache-manager-ioredis": ["packages/node-cache-manager-ioredis/src/index.ts"],
+      "@node-cache-manager-mongodb/node-cache-manager-mongodb": ["packages/node-cache-manager-mongodb/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

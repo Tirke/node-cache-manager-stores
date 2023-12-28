@@ -6,9 +6,7 @@
   "targets": {
     "build": {
       "executor": "nx:run-commands",
-      "outputs": [
-        "{workspaceRoot}/dist/packages/node-cache-manager-ioredis"
-      ],
+      "outputs": ["{workspaceRoot}/dist/packages/node-cache-manager-ioredis"],
       "options": {
         "parallel": false,
         "commands": [
@@ -25,24 +23,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
-      "options": {
-        "lintFilePatterns": [
-          "packages/node-cache-manager-mongodb/**/*.ts"
-        ]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/packages/node-cache-manager-mongodb"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/packages/node-cache-manager-mongodb"],
       "options": {
-        "jestConfig": "packages/node-cache-manager-mongodb/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "packages/node-cache-manager-mongodb/jest.config.ts"
       }
     }
   },
