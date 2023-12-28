@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-mongodb
 
+## 1.4.0
+
+### Minor Changes
+
+- add license ([`3213b822d8b31b7b508a9c4beec947aeb53de176`](https://github.com/Tirke/node-cache-manager-stores/commit/3213b822d8b31b7b508a9c4beec947aeb53de176))
+
 ## 1.3.0
 
 ### Minor Changes
