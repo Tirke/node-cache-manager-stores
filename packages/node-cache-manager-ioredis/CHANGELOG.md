@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-ioredis
 
+## 3.6.0
+
+### Minor Changes
+
+- add additional license file ([`af59b7e32fe9a65b214d7876b6662fff638b07be`](https://github.com/Tirke/node-cache-manager-stores/commit/af59b7e32fe9a65b214d7876b6662fff638b07be))
+
 ## 3.5.0
 
 ### Minor Changes
