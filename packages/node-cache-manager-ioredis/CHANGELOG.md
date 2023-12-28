@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-ioredis
 
+## 3.5.0
+
+### Minor Changes
+
+- add license ([`3213b822d8b31b7b508a9c4beec947aeb53de176`](https://github.com/Tirke/node-cache-manager-stores/commit/3213b822d8b31b7b508a9c4beec947aeb53de176))
+
 ## 3.4.0
 
 ### Minor Changes
@@ -45,30 +51,30 @@
   ```typescript
   // Before
 
-  import { IoRedisStore } from '@tirke/node-cache-manager-ioredis'
-  import { caching } from 'cache-manager'
+  import { IoRedisStore } from "@tirke/node-cache-manager-ioredis";
+  import { caching } from "cache-manager";
 
   const redisCache = caching({
     store: IoRedisStore,
-    host: 'localhost', // default value
+    host: "localhost", // default value
     port: 6379, // default value
-    password: 'XXXXX',
+    password: "XXXXX",
     ttl: 600,
-  })
+  });
   ```
 
   ```typescript
   // After
 
-  import { ioRedisStore, RedisCache } from '@tirke/node-cache-manager-ioredis'
-  import { caching } from 'cache-manager'
+  import { ioRedisStore, RedisCache } from "@tirke/node-cache-manager-ioredis";
+  import { caching } from "cache-manager";
 
   const redisCache: RedisCache = caching(ioRedisStore, {
-    host: 'localhost', // default value
+    host: "localhost", // default value
     port: 6379, // default value
-    password: 'XXXXX',
+    password: "XXXXX",
     ttl: 600,
-  })
+  });
   ```
 
 ## 2.1.0
@@ -93,7 +99,7 @@
   Package was previously imported as a default import
 
   ```typescript
-  import RedisStore from '@tirke/cache-manager-ioredis'
+  import RedisStore from "@tirke/cache-manager-ioredis";
   ```
 
   This could lead to some difficulties when transpiling and importing with require in node.
@@ -101,7 +107,7 @@
   The package is now exporting a new named import
 
   ```typescript
-  import { IoRedisStore } from '@tirke/cache-manager-ioredis'
+  import { IoRedisStore } from "@tirke/cache-manager-ioredis";
   ```
 
 ## 1.0.3
