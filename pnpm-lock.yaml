@@ -58,8 +58,8 @@ importers:
         specifier: 6.19.0
         version: 6.19.0(eslint@8.56.0)(typescript@5.3.3)
       cache-manager:
-        specifier: 5.3.2
-        version: 5.3.2
+        specifier: 5.4.0
+        version: 5.4.0
       eslint:
         specifier: 8.56.0
         version: 8.56.0
@@ -3855,8 +3855,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /cache-manager@5.3.2:
-    resolution: {integrity: sha512-MBpwYqCqf8LFSso5CjMs5Kj2i3RYYUP0fLwjMSnxyspYx0y8uT1SZbWiOk33fw5r+Sbpe5ERfk1+pgXEJ/omEw==}
+  /cache-manager@5.4.0:
+    resolution: {integrity: sha512-FS7o8vqJosnLpu9rh2gQTo8EOzCRJLF1BJ4XDEUDMqcfvs7SJZs5iuoFTXLauzQ3S5v8sBAST1pCwMaurpyi1A==}
     dependencies:
       lodash.clonedeep: 4.5.0
       lru-cache: 10.1.0
