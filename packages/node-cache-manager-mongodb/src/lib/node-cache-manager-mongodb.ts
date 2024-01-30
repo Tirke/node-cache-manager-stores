@@ -17,18 +17,22 @@ interface MongoDbStore extends Store {
 type Args = {
   url?: string
   mongoConfig?: MongoClientOptions
+  collectionName?: string
 } & Config
+
 
 class MongoDb implements MongoDbStore {
   public readonly client: MongoClient
   readonly internalTtl: number | undefined
   readonly isCacheable: (value: unknown) => boolean
+  readonly collectionName: string
   readonly db: Db
   private initIndexes = true
 
   constructor(args: Args) {
     this.internalTtl = args.ttl
     this.isCacheable = args.isCacheable || ((value: unknown) => value !== undefined && value !== null)
+    this.collectionName = args.collectionName || 'cache'
     if (args.url && args.mongoConfig) {
       this.client = new MongoClient(args.url, args.mongoConfig)
     } else if (!args.url && args.mongoConfig) {
@@ -41,7 +45,7 @@ class MongoDb implements MongoDbStore {
   }
 
   async getColl() {
-    const coll = this.db.collection<CacheDoc>('cache')
+    const coll = this.db.collection<CacheDoc>(this.collectionName)
 
     if (this.initIndexes) {
       await coll.createIndex({ key: 1 }, { unique: true })

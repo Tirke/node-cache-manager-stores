@@ -263,3 +263,35 @@ describe('wrap function', () => {
     expect(await mongoCache.wrap(`user`, () => getUser(userId + 1))).toEqual({ id: userId })
   })
 })
+
+describe('collectionName', () => {
+  it('should use a custom collection name', async () => {
+    const cacheWithCustomCollName = await caching(mongoDbStore, {
+      collectionName: 'custom-collection',
+      url: 'mongodb://localhost:27017',
+      ttl: 60,
+      mongoConfig: {},
+    })
+
+    await cacheWithCustomCollName.set('foo', 'bar')
+    const collections = await cacheWithCustomCollName.store.db.listCollections().toArray()
+
+    expect(collections[0].name).toEqual('custom-collection')
+
+    await cacheWithCustomCollName.reset()
+  })
+
+  it('should use cache as the default collection name', async () => {
+    const baseCache = await caching(mongoDbStore, {
+      url: 'mongodb://localhost:27017',
+      ttl: 60,
+      mongoConfig: {},
+    })
+
+    await baseCache.set('foo', 'bar')
+    const collections = await baseCache.store.db.listCollections().toArray()
+    expect(collections[0].name).toEqual('cache')
+
+    await baseCache.reset()
+  })
+})

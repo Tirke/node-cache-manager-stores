@@ -50,3 +50,17 @@ await mongoCache.set('foo', 'bar', { ttl: 5 })
 const result = await mongoCache.get('foo')
 await mongoCache.del('foo')
 ```
+
+### Custom collection name
+
+```typescript
+import { caching } from 'cache-manager'
+
+import { mongoDbStore } from './node-cache-manager-mongodb'
+
+const mongoCache = await caching(mongoDbStore, {
+  url: 'mongodb://localhost:27017',
+  collectionName: 'custom-collection-name',
+  mongoConfig: { auth: { password: '<password>', username: '<user>' } },
+})
+```
