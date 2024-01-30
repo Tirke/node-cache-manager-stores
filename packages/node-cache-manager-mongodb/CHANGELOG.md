@@ -1,5 +1,24 @@
 # @tirke/node-cache-manager-mongodb
 
+## 1.6.0
+
+### Minor Changes
+
+- Can now specify a custom collection name. ([`406c1424c37916131fa4dcf1cb355a0e3b5b360b`](https://github.com/Tirke/node-cache-manager-stores/commit/406c1424c37916131fa4dcf1cb355a0e3b5b360b))
+  Default collection name will remain cache if unspecified.
+
+  ```typescript
+  import { caching } from "cache-manager";
+
+  import { mongoDbStore } from "./node-cache-manager-mongodb";
+
+  const mongoCache = await caching(mongoDbStore, {
+    url: "mongodb://localhost:27017",
+    collectionName: "custom-collection-name",
+    mongoConfig: { auth: { password: "<password>", username: "<user>" } },
+  });
+  ```
+
 ## 1.5.0
 
 ### Minor Changes
