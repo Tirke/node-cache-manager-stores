@@ -312,7 +312,7 @@ describe('databaseName', () => {
     await cacheWithCustomDatabaseName.reset()
   })
 
-  it('should use cache as the default collection name', async () => {
+  it('should use cache as the default database name', async () => {
     const baseCache = await caching(mongoDbStore, {
       url: 'mongodb://localhost:27017',
       ttl: 60,
