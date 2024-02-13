@@ -64,3 +64,17 @@ const mongoCache = await caching(mongoDbStore, {
   mongoConfig: { auth: { password: '<password>', username: '<user>' } },
 })
 ```
+
+### Custom database name
+
+```typescript
+import { caching } from 'cache-manager'
+
+import { mongoDbStore } from './node-cache-manager-mongodb'
+
+const mongoCache = await caching(mongoDbStore, {
+  url: 'mongodb://localhost:27017',
+  databaseName: 'custom-database-name',
+  mongoConfig: { auth: { password: '<password>', username: '<user>' } },
+})
+```
