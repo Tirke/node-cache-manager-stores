@@ -295,3 +295,33 @@ describe('collectionName', () => {
     await baseCache.reset()
   })
 })
+
+describe('databaseName', () => {
+  it('should use a custom database name', async () => {
+    const cacheWithCustomDatabaseName = await caching(mongoDbStore, {
+      databaseName: 'custom-database',
+      url: 'mongodb://localhost:27017',
+      ttl: 60,
+      mongoConfig: {},
+    })
+
+    await cacheWithCustomDatabaseName.set('foo', 'bar')
+
+    expect(cacheWithCustomDatabaseName.store.db.databaseName).toEqual('custom-database')
+
+    await cacheWithCustomDatabaseName.reset()
+  })
+
+  it('should use cache as the default collection name', async () => {
+    const baseCache = await caching(mongoDbStore, {
+      url: 'mongodb://localhost:27017',
+      ttl: 60,
+      mongoConfig: {},
+    })
+
+    await baseCache.set('foo', 'bar')
+    expect(baseCache.store.db.databaseName).toEqual('cache')
+
+    await baseCache.reset()
+  })
+})

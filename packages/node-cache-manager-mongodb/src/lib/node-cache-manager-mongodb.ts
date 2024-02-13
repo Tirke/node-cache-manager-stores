@@ -18,6 +18,7 @@ type Args = {
   url?: string
   mongoConfig?: MongoClientOptions
   collectionName?: string
+  databaseName?: string
 } & Config
 
 
@@ -26,6 +27,7 @@ class MongoDb implements MongoDbStore {
   readonly internalTtl: number | undefined
   readonly isCacheable: (value: unknown) => boolean
   readonly collectionName: string
+  readonly databaseName: string
   readonly db: Db
   private initIndexes = true
 
@@ -33,6 +35,7 @@ class MongoDb implements MongoDbStore {
     this.internalTtl = args.ttl
     this.isCacheable = args.isCacheable || ((value: unknown) => value !== undefined && value !== null)
     this.collectionName = args.collectionName || 'cache'
+    this.databaseName = args.databaseName || 'cache'
     if (args.url && args.mongoConfig) {
       this.client = new MongoClient(args.url, args.mongoConfig)
     } else if (!args.url && args.mongoConfig) {
@@ -41,7 +44,7 @@ class MongoDb implements MongoDbStore {
       throw new Error('MongoDB connection URL and mongoConfig are required')
     }
 
-    this.db = this.client.db('cache')
+    this.db = this.client.db(this.databaseName)
   }
 
   async getColl() {
