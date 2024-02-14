@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-mongodb
 
+## 1.7.0
+
+### Minor Changes
+
+- add option to configure a custom database name ([#526](https://github.com/Tirke/node-cache-manager-stores/pull/526))
+
 ## 1.6.0
 
 ### Minor Changes
