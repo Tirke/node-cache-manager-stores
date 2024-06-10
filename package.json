@@ -20,7 +20,7 @@
     "@nx/workspace": "17.2.8",
     "@svitejs/changesets-changelog-github-compact": "1.1.0",
     "@swc/cli": "0.3.12",
-    "@swc/core": "1.5.25",
+    "@swc/core": "1.5.27",
     "@swc/jest": "0.2.36",
     "@types/jest": "29.5.12",
     "@types/node": "20.14.2",
