@@ -16,33 +16,33 @@ const config = {
 }
 
 beforeEach(async () => {
-  redisCache = await caching(ioRedisStore, {
-    instanceConfig: {
-      host: config.host,
-      port: config.port,
-      password: config.password,
-      db: config.db,
-    },
-  })
-
-  await redisCache.reset()
-
-  customRedisCache = await caching(ioRedisStore, {
-    instanceConfig: {
-      host: config.host,
-      port: config.port,
-      password: config.password,
-      db: config.db,
-    },
-    isCacheable: (val) => {
-      if (val === undefined) {
-        return true
-      }
-      return val !== 'FooBarString'
-    },
-  })
-
-  await customRedisCache.reset()
+  // redisCache = await caching(ioRedisStore, {
+  //   instanceConfig: {
+  //     host: config.host,
+  //     port: config.port,
+  //     password: config.password,
+  //     db: config.db,
+  //   },
+  // })
+  //
+  // await redisCache.reset()
+  //
+  // customRedisCache = await caching(ioRedisStore, {
+  //   instanceConfig: {
+  //     host: config.host,
+  //     port: config.port,
+  //     password: config.password,
+  //     db: config.db,
+  //   },
+  //   isCacheable: (val) => {
+  //     if (val === undefined) {
+  //       return true
+  //     }
+  //     return val !== 'FooBarString'
+  //   },
+  // })
+  //
+  // await customRedisCache.reset()
 })
 
 describe('init', () => {
@@ -444,4 +444,19 @@ describe('wrap function', () => {
 
     expect(await redisCache.wrap(`user`, () => getUser(userId + 1))).toEqual({ id: userId })
   })
+})
+
+it.skip('should create a cluster store with a default ttl', async () => {
+  const defaultTtlInstance = await caching(ioRedisStore, {
+    clusterConfig: {
+      nodes: [
+        { host: '172.38.0.11', port: config.port },
+        { host: '172.38.0.12', port: config.port },
+        { host: '172.38.0.13', port: config.port },
+      ],
+    },
+    ttl: 5,
+  })
+  await expect(defaultTtlInstance.set('extfoo', 'extbar')).resolves.not.toThrow()
+  expect(await defaultTtlInstance.store.ttl('extfoo')).toEqual(5)
 })
