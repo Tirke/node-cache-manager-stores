@@ -8,24 +8,24 @@
     "release": "zx tools/scripts/patch-package-publish-config.mjs && pnpm exec changeset publish"
   },
   "dependencies": {
-    "ioredis": "^5.3.2",
-    "mongodb": "^6.3.0"
+    "ioredis": "^5.4.1",
+    "mongodb": "^6.8.0"
   },
   "devDependencies": {
-    "@changesets/cli": "2.27.5",
+    "@changesets/cli": "2.27.7",
     "@nx/eslint": "19.4.0",
     "@nx/eslint-plugin": "19.4.0",
     "@nx/jest": "19.4.0",
     "@nx/js": "19.4.0",
     "@nx/workspace": "19.4.0",
     "@svitejs/changesets-changelog-github-compact": "1.1.0",
-    "@swc/cli": "0.3.14",
-    "@swc/core": "1.5.7",
+    "@swc/cli": "0.4.0",
+    "@swc/core": "1.6.7",
     "@swc/jest": "0.2.36",
     "@types/jest": "29.5.12",
-    "@types/node": "18.19.9",
-    "@typescript-eslint/eslint-plugin": "7.9.0",
-    "@typescript-eslint/parser": "7.9.0",
+    "@types/node": "20.14.9",
+    "@typescript-eslint/eslint-plugin": "7.15.0",
+    "@typescript-eslint/parser": "7.15.0",
     "cache-manager": "5.6.1",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
@@ -35,7 +35,7 @@
     "prettier": "3.3.2",
     "ts-node": "10.9.2",
     "tsup": "8.1.0",
-    "typescript": "5.4.5",
-    "zx": "8.1.2"
+    "typescript": "5.5.3",
+    "zx": "8.1.3"
   }
 }

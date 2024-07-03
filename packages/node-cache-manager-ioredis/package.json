@@ -28,6 +28,6 @@
     "provenance": true
   },
   "dependencies": {
-    "ioredis": "^5.2.2"
+    "ioredis": "^5.4.1"
   }
 }
