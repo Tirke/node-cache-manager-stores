@@ -16,33 +16,33 @@ const config = {
 }
 
 beforeEach(async () => {
-  // redisCache = await caching(ioRedisStore, {
-  //   instanceConfig: {
-  //     host: config.host,
-  //     port: config.port,
-  //     password: config.password,
-  //     db: config.db,
-  //   },
-  // })
-  //
-  // await redisCache.reset()
-  //
-  // customRedisCache = await caching(ioRedisStore, {
-  //   instanceConfig: {
-  //     host: config.host,
-  //     port: config.port,
-  //     password: config.password,
-  //     db: config.db,
-  //   },
-  //   isCacheable: (val) => {
-  //     if (val === undefined) {
-  //       return true
-  //     }
-  //     return val !== 'FooBarString'
-  //   },
-  // })
-  //
-  // await customRedisCache.reset()
+  redisCache = await caching(ioRedisStore, {
+    instanceConfig: {
+      host: config.host,
+      port: config.port,
+      password: config.password,
+      db: config.db,
+    },
+  })
+
+  await redisCache.reset()
+
+  customRedisCache = await caching(ioRedisStore, {
+    instanceConfig: {
+      host: config.host,
+      port: config.port,
+      password: config.password,
+      db: config.db,
+    },
+    isCacheable: (val) => {
+      if (val === undefined) {
+        return true
+      }
+      return val !== 'FooBarString'
+    },
+  })
+
+  await customRedisCache.reset()
 })
 
 describe('init', () => {
