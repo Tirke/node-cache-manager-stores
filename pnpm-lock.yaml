@@ -58,8 +58,8 @@ importers:
         specifier: 7.16.0
         version: 7.16.0(eslint@8.57.0)(typescript@5.5.3)
       cache-manager:
-        specifier: 5.7.2
-        version: 5.7.2
+        specifier: 5.7.3
+        version: 5.7.3
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -2002,8 +2002,8 @@ packages:
     resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
     engines: {node: '>=8'}
 
-  cache-manager@5.7.2:
-    resolution: {integrity: sha512-YJ4YL4hCbn2P11vK85eo1W8nF1L9FBnRvqzRmGEy0qwNxojrsKe8U09zvRoQFo1hidbw4wfTsyce8HIo8Pvvyw==}
+  cache-manager@5.7.3:
+    resolution: {integrity: sha512-Vp2gd2aDm/MXdEWD0FLdOflvcVj4rdJ1FFmPUeOKq+fuL7MEUcezbTWxQmVB1TTN5Ig92CabMfi5z+HyQwVg9A==}
     engines: {node: '>= 18'}
 
   cacheable-lookup@5.0.4:
@@ -3213,10 +3213,6 @@ packages:
   lru-cache@10.2.2:
     resolution: {integrity: sha512-9hp3Vp2/hFQUiIwKo8XCeFVnrg8Pk3TYNPIR7tJADKi5YfcF7vEaK7avFHTlSy3kOKYaJQaalfEo6YuXdceBOQ==}
     engines: {node: 14 || >=16.14}
-
-  lru-cache@11.0.0:
-    resolution: {integrity: sha512-Qv32eSV1RSCfhY3fpPE2GNZ8jgM9X7rdAfemLWqTUxwiyIC4jJ6Sy0fZ8H+oLWevO6i4/bizg7c8d8i6bxrzbA==}
-    engines: {node: 20 || >=22}
 
   lru-cache@4.1.5:
     resolution: {integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==}
@@ -6921,11 +6917,11 @@ snapshots:
 
   cac@6.7.14: {}
 
-  cache-manager@5.7.2:
+  cache-manager@5.7.3:
     dependencies:
       eventemitter3: 5.0.1
       lodash.clonedeep: 4.5.0
-      lru-cache: 11.0.0
+      lru-cache: 10.2.2
       promise-coalesce: 1.1.2
 
   cacheable-lookup@5.0.4: {}
@@ -8403,8 +8399,6 @@ snapshots:
   lowercase-keys@2.0.0: {}
 
   lru-cache@10.2.2: {}
-
-  lru-cache@11.0.0: {}
 
   lru-cache@4.1.5:
     dependencies:
