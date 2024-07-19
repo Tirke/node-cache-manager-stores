@@ -82,8 +82,8 @@ importers:
         specifier: 10.9.2
         version: 10.9.2(@swc/core@1.7.0)(@types/node@20.14.10)(typescript@5.5.3)
       tsup:
-        specifier: 8.1.2
-        version: 8.1.2(@swc/core@1.7.0)(typescript@5.5.3)
+        specifier: 8.2.0
+        version: 8.2.0(@swc/core@1.7.0)(typescript@5.5.3)
       typescript:
         specifier: 5.5.3
         version: 5.5.3
@@ -4124,8 +4124,8 @@ packages:
   tslib@2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
 
-  tsup@8.1.2:
-    resolution: {integrity: sha512-Gzw/PXSX/z0aYMNmkcI54bKKFVFJQbLne+EqTJZeQ3lNT3QpumjtMU4rl+ZwTTp8oRF3ahMbEAxT2sZPJLFSrg==}
+  tsup@8.2.0:
+    resolution: {integrity: sha512-XoarnVlfXxbv8ODHtxUq8D2XPc9luX+pamnp1kHSKLknKCDcX0Rkc21NHdbpugH6hKoNiETXypKKVgVu46vVRg==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -9377,7 +9377,7 @@ snapshots:
 
   tslib@2.4.0: {}
 
-  tsup@8.1.2(@swc/core@1.7.0)(typescript@5.5.3):
+  tsup@8.2.0(@swc/core@1.7.0)(typescript@5.5.3):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
