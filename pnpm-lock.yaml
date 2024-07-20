@@ -82,8 +82,8 @@ importers:
         specifier: 10.9.2
         version: 10.9.2(@swc/core@1.7.0)(@types/node@20.14.10)(typescript@5.5.3)
       tsup:
-        specifier: 8.2.0
-        version: 8.2.0(@swc/core@1.7.0)(typescript@5.5.3)
+        specifier: 8.2.1
+        version: 8.2.1(@swc/core@1.7.0)(typescript@5.5.3)
       typescript:
         specifier: 5.5.3
         version: 5.5.3
@@ -2549,6 +2549,14 @@ packages:
   fb-watchman@2.0.2:
     resolution: {integrity: sha512-p5161BqbuCaSnB8jIbzQHOlpgsPmK5rJVDfDKO91Axs5NC1uu3HRQm6wt9cd9/+GtQQIO53JdGXXoyDpTAsgYA==}
 
+  fdir@6.1.1:
+    resolution: {integrity: sha512-QfKBVg453Dyn3mr0Q0O+Tkr1r79lOTAKSi9f/Ot4+qVEwxWhav2Z+SudrG9vQjM2aYRMQQZ2/Q1zdA8ACM1pDg==}
+    peerDependencies:
+      picomatch: 3.x
+    peerDependenciesMeta:
+      picomatch:
+        optional: true
+
   figures@3.2.0:
     resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
     engines: {node: '>=8'}
@@ -3602,6 +3610,10 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
+  picomatch@4.0.2:
+    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
+    engines: {node: '>=12'}
+
   pify@2.3.0:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
@@ -4124,8 +4136,8 @@ packages:
   tslib@2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
 
-  tsup@8.2.0:
-    resolution: {integrity: sha512-XoarnVlfXxbv8ODHtxUq8D2XPc9luX+pamnp1kHSKLknKCDcX0Rkc21NHdbpugH6hKoNiETXypKKVgVu46vVRg==}
+  tsup@8.2.1:
+    resolution: {integrity: sha512-ArA/s1GvXbovrnNeTtLphz7D2+OiFVCARviT8RmnWxFdH44dFt8v2tqz54MjJyqZC+QgjKjRuTlWKvC3CkAq3Q==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -4699,7 +4711,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       chalk: 2.4.2
       js-tokens: 4.0.0
-      picocolors: 1.0.0
+      picocolors: 1.0.1
 
   '@babel/parser@7.22.7':
     dependencies:
@@ -7610,6 +7622,10 @@ snapshots:
     dependencies:
       bser: 2.1.1
 
+  fdir@6.1.1(picomatch@4.0.2):
+    optionalDependencies:
+      picomatch: 4.0.2
+
   figures@3.2.0:
     dependencies:
       escape-string-regexp: 1.0.5
@@ -8837,6 +8853,8 @@ snapshots:
 
   picomatch@2.3.1: {}
 
+  picomatch@4.0.2: {}
+
   pify@2.3.0: {}
 
   pify@4.0.1: {}
@@ -9377,7 +9395,7 @@ snapshots:
 
   tslib@2.4.0: {}
 
-  tsup@8.2.0(@swc/core@1.7.0)(typescript@5.5.3):
+  tsup@8.2.1(@swc/core@1.7.0)(typescript@5.5.3):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -9386,8 +9404,10 @@ snapshots:
       debug: 4.3.5
       esbuild: 0.23.0
       execa: 5.1.1
-      globby: 11.1.0
+      fdir: 6.1.1(picomatch@4.0.2)
       joycon: 3.1.1
+      picocolors: 1.0.1
+      picomatch: 4.0.2
       postcss-load-config: 6.0.1
       resolve-from: 5.0.0
       rollup: 4.18.1
@@ -9472,7 +9492,7 @@ snapshots:
     dependencies:
       browserslist: 4.21.10
       escalade: 3.1.1
-      picocolors: 1.0.0
+      picocolors: 1.0.1
 
   update-browserslist-db@1.1.0(browserslist@4.23.1):
     dependencies:
