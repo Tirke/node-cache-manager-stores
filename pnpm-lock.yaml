@@ -58,8 +58,8 @@ importers:
         specifier: 7.18.0
         version: 7.18.0(eslint@8.57.0)(typescript@5.5.4)
       cache-manager:
-        specifier: 5.7.5
-        version: 5.7.5
+        specifier: 5.7.6
+        version: 5.7.6
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -2043,8 +2043,8 @@ packages:
     resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
     engines: {node: '>=8'}
 
-  cache-manager@5.7.5:
-    resolution: {integrity: sha512-mBMVq5rw33a7ZdxrpDEo0BY9W7UTmbD+t2jgkofuLDqssGG+kUVaKugq2WQiINZWxMJJ9LAXtJIYLtdEThmqQw==}
+  cache-manager@5.7.6:
+    resolution: {integrity: sha512-wBxnBHjDxF1RXpHCBD6HGvKER003Ts7IIm0CHpggliHzN1RZditb7rXoduE1rplc2DEFYKxhLKgFuchXMJje9w==}
     engines: {node: '>= 18'}
 
   cacheable-lookup@5.0.4:
@@ -7020,7 +7020,7 @@ snapshots:
 
   cac@6.7.14: {}
 
-  cache-manager@5.7.5:
+  cache-manager@5.7.6:
     dependencies:
       eventemitter3: 5.0.1
       lodash.clonedeep: 4.5.0
