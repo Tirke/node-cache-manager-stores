@@ -36,7 +36,9 @@ class MongoDb implements MongoDbStore {
     this.isCacheable = args.isCacheable || ((value: unknown) => value !== undefined && value !== null)
     this.collectionName = args.collectionName || 'cache'
     this.databaseName = args.databaseName || 'cache'
-    if (args.url && args.mongoConfig) {
+    if (args.client) {
+      this.client = args.client
+    } else if (args.url && args.mongoConfig) {
       this.client = new MongoClient(args.url, args.mongoConfig)
     } else if (!args.url && args.mongoConfig) {
       this.client = new MongoClient('mongodb://localhost:27017', args.mongoConfig)
