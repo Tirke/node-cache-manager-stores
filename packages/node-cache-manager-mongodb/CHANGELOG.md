@@ -1,5 +1,11 @@
 # @tirke/node-cache-manager-mongodb
 
+## 1.8.0
+
+### Minor Changes
+
+- Add possibility to pass a Mongo Client to the constructor ([#694](https://github.com/Tirke/node-cache-manager-stores/pull/694))
+
 ## 1.7.0
 
 ### Minor Changes
@@ -14,15 +20,15 @@
   Default collection name will remain cache if unspecified.
 
   ```typescript
-  import { caching } from "cache-manager";
+  import { caching } from 'cache-manager'
 
-  import { mongoDbStore } from "./node-cache-manager-mongodb";
+  import { mongoDbStore } from './node-cache-manager-mongodb'
 
   const mongoCache = await caching(mongoDbStore, {
-    url: "mongodb://localhost:27017",
-    collectionName: "custom-collection-name",
-    mongoConfig: { auth: { password: "<password>", username: "<user>" } },
-  });
+    url: 'mongodb://localhost:27017',
+    collectionName: 'custom-collection-name',
+    mongoConfig: { auth: { password: '<password>', username: '<user>' } },
+  })
   ```
 
 ## 1.5.0
