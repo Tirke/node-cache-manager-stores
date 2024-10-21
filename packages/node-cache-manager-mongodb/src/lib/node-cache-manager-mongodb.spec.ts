@@ -1,4 +1,5 @@
 import { caching } from 'cache-manager'
+import { MongoClient } from 'mongodb'
 
 import { mongoDbStore, MongoCache } from './node-cache-manager-mongodb'
 
@@ -323,5 +324,17 @@ describe('databaseName', () => {
     expect(baseCache.store.db.databaseName).toEqual('cache')
 
     await baseCache.reset()
+  })
+})
+
+describe('reusing Mongo client', () => {
+  it('should reuse the client', async () => {
+    const mongoClient = new MongoClient('mongodb://localhost:27017')
+    const cache = await caching(mongoDbStore, {
+      client: mongoClient,
+    })
+
+    await cache.set('foo', 'bar')
+    expect(cache.store.client).toEqual(mongoClient)
   })
 })

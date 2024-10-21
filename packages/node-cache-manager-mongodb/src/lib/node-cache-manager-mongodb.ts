@@ -19,6 +19,7 @@ type Args = {
   mongoConfig?: MongoClientOptions
   collectionName?: string
   databaseName?: string
+  client?: MongoClient
 } & Config
 
 
