@@ -34,8 +34,8 @@ importers:
         specifier: 19.4.0
         version: 19.4.0(@swc/core@1.7.26)
       '@svitejs/changesets-changelog-github-compact':
-        specifier: 1.1.0
-        version: 1.1.0
+        specifier: 1.2.0
+        version: 1.2.0
       '@swc/cli':
         specifier: 0.4.0
         version: 0.4.0(@swc/core@1.7.26)(chokidar@3.6.0)
@@ -906,8 +906,8 @@ packages:
   '@changesets/get-dependents-graph@2.1.2':
     resolution: {integrity: sha512-sgcHRkiBY9i4zWYBwlVyAjEM9sAzs4wYVwJUdnbDLnVG3QwAaia1Mk5P8M7kraTOZN+vBET7n8KyB0YXCbFRLQ==}
 
-  '@changesets/get-github-info@0.5.2':
-    resolution: {integrity: sha512-JppheLu7S114aEs157fOZDjFqUDpm7eHdq5E8SSR0gUBTEK0cNSHsrSR5a66xs0z3RWuo46QvA3vawp8BxDHvg==}
+  '@changesets/get-github-info@0.6.0':
+    resolution: {integrity: sha512-v/TSnFVXI8vzX9/w3DU2Ol+UlTZcu3m0kXTjTT4KlAdwSvwutcByYwyYn9hwerPWfPkT2JfpoX0KgvCEi8Q/SA==}
 
   '@changesets/get-release-plan@4.0.4':
     resolution: {integrity: sha512-SicG/S67JmPTrdcc9Vpu0wSQt7IiuN0dc8iR5VScnnTVPfIaLvKmEGRvIaF0kcn8u5ZqLbormZNTO77bCEvyWw==}
@@ -1487,8 +1487,8 @@ packages:
   '@sinonjs/fake-timers@10.0.2':
     resolution: {integrity: sha512-SwUDyjWnah1AaNl7kxsa7cfLhlTYoiyhDAIgyh+El30YvXs/o7OLXpYH88Zdhyx9JExKrmHDJ+10bwIcY80Jmw==}
 
-  '@svitejs/changesets-changelog-github-compact@1.1.0':
-    resolution: {integrity: sha512-qhUGGDHcpbY2zpjW3SwqchuW8J/5EzlPFud7xNntHKA7f3a/mx5+g+ruJKFHSAiVZYo30PALt+AyhmPUNKH/Og==}
+  '@svitejs/changesets-changelog-github-compact@1.2.0':
+    resolution: {integrity: sha512-08eKiDAjj4zLug1taXSIJ0kGL5cawjVCyJkBb6EWSg5fEPX6L+Wtr0CH2If4j5KYylz85iaZiFlUItvgJvll5g==}
     engines: {node: ^14.13.1 || ^16.0.0 || >=18}
 
   '@swc/cli@0.4.0':
@@ -2342,10 +2342,6 @@ packages:
 
   dotenv-expand@11.0.6:
     resolution: {integrity: sha512-8NHi73otpWsZGBSZwwknTXS5pqMOrk9+Ssrna8xCaxkzEpU9OTf9R5ArQGVw03//Zmk9MOwLPng9WwndvpAJ5g==}
-    engines: {node: '>=12'}
-
-  dotenv@16.0.3:
-    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
 
   dotenv@16.4.5:
@@ -5691,7 +5687,7 @@ snapshots:
       picocolors: 1.1.0
       semver: 7.6.2
 
-  '@changesets/get-github-info@0.5.2':
+  '@changesets/get-github-info@0.6.0':
     dependencies:
       dataloader: 1.4.0
       node-fetch: 2.6.7
@@ -6532,10 +6528,10 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 2.0.0
 
-  '@svitejs/changesets-changelog-github-compact@1.1.0':
+  '@svitejs/changesets-changelog-github-compact@1.2.0':
     dependencies:
-      '@changesets/get-github-info': 0.5.2
-      dotenv: 16.0.3
+      '@changesets/get-github-info': 0.6.0
+      dotenv: 16.4.5
     transitivePeerDependencies:
       - encoding
 
@@ -7472,8 +7468,6 @@ snapshots:
   dotenv-expand@11.0.6:
     dependencies:
       dotenv: 16.4.5
-
-  dotenv@16.0.3: {}
 
   dotenv@16.4.5: {}
 

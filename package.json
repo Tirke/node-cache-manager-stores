@@ -18,7 +18,7 @@
     "@nx/jest": "19.4.0",
     "@nx/js": "19.4.0",
     "@nx/workspace": "19.4.0",
-    "@svitejs/changesets-changelog-github-compact": "1.1.0",
+    "@svitejs/changesets-changelog-github-compact": "1.2.0",
     "@swc/cli": "0.4.0",
     "@swc/core": "1.7.26",
     "@swc/jest": "0.2.36",
