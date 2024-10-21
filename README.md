@@ -2,7 +2,7 @@
 
 # Node cache manager stores
 
-This is a monorepo containing multiple stores implementation for [cache-manager](https://github.com/node-cache-manager/node-cache-manager).
+This is a monorepo containing multiple stores implementation for [cache-manager](https://github.com/node-cache-manager/node-cache-manager) old versions before the project was reworked to the new cacheable package.
 
 ## Documentation
 
