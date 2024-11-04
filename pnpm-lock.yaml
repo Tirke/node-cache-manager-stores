@@ -19,7 +19,7 @@ importers:
         specifier: 2.27.9
         version: 2.27.9
       '@eslint/eslintrc':
-        specifier: ^3.1.0
+        specifier: 3.1.0
         version: 3.1.0
       '@nx/eslint':
         specifier: 20.0.6
@@ -91,7 +91,7 @@ importers:
         specifier: 5.6.3
         version: 5.6.3
       typescript-eslint:
-        specifier: ^8.0.0
+        specifier: 8.12.2
         version: 8.12.2(eslint@9.14.0)(typescript@5.6.3)
       zx:
         specifier: 8.2.0
@@ -6450,10 +6450,6 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  acorn-jsx@5.3.2(acorn@8.11.3):
-    dependencies:
-      acorn: 8.11.3
-
   acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:
       acorn: 8.14.0
@@ -7293,8 +7289,8 @@ snapshots:
 
   espree@9.6.1:
     dependencies:
-      acorn: 8.11.3
-      acorn-jsx: 5.3.2(acorn@8.11.3)
+      acorn: 8.14.0
+      acorn-jsx: 5.3.2(acorn@8.14.0)
       eslint-visitor-keys: 3.4.3
 
   esprima@4.0.1: {}
