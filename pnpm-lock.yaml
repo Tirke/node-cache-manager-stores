@@ -40,8 +40,8 @@ importers:
         specifier: 1.2.0
         version: 1.2.0
       '@swc/cli':
-        specifier: 0.5.1
-        version: 0.5.1(@swc/core@1.9.3)(chokidar@3.6.0)
+        specifier: 0.5.2
+        version: 0.5.2(@swc/core@1.9.3)(chokidar@3.6.0)
       '@swc/core':
         specifier: 1.9.3
         version: 1.9.3
@@ -1437,8 +1437,8 @@ packages:
     resolution: {integrity: sha512-08eKiDAjj4zLug1taXSIJ0kGL5cawjVCyJkBb6EWSg5fEPX6L+Wtr0CH2If4j5KYylz85iaZiFlUItvgJvll5g==}
     engines: {node: ^14.13.1 || ^16.0.0 || >=18}
 
-  '@swc/cli@0.5.1':
-    resolution: {integrity: sha512-sxSXyjqFImYrqjhZSPymjmM/9V6auZG67UsDwbe7FZaBlyfW8ka3QG/zRjpJJ9+8Ahns/kKb8bXPKQq7V2MtBw==}
+  '@swc/cli@0.5.2':
+    resolution: {integrity: sha512-ul2qIqjM5bfe9zWLqFDmHZCf9HXXSZZAlZLe4czn+lH4PewO+OWZnQcYCscnJKlbx6MuWjzXVR7gkspjNEJwJA==}
     engines: {node: '>= 16.14.0'}
     hasBin: true
     peerDependencies:
@@ -6211,7 +6211,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@swc/cli@0.5.1(@swc/core@1.9.3)(chokidar@3.6.0)':
+  '@swc/cli@0.5.2(@swc/core@1.9.3)(chokidar@3.6.0)':
     dependencies:
       '@swc/core': 1.9.3
       '@swc/counter': 0.1.3
@@ -7508,7 +7508,7 @@ snapshots:
       '@nodelib/fs.walk': 1.2.8
       glob-parent: 5.1.2
       merge2: 1.4.1
-      micromatch: 4.0.7
+      micromatch: 4.0.8
 
   fast-json-stable-stringify@2.1.0: {}
 
