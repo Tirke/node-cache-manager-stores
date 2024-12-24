@@ -38,6 +38,6 @@
     "tsup": "8.3.5",
     "typescript": "5.7.2",
     "typescript-eslint": "8.18.2",
-    "zx": "8.2.4"
+    "zx": "8.3.0"
   }
 }
