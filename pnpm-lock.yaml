@@ -26,7 +26,7 @@ importers:
         version: 20.0.6(@babel/traverse@7.24.7)(@swc/core@1.10.8)(@types/node@22.10.1)(@zkochan/js-yaml@0.0.7)(eslint@9.18.0)(nx@20.0.6(@swc/core@1.10.8))
       '@nx/eslint-plugin':
         specifier: 20.0.6
-        version: 20.0.6(@babel/traverse@7.24.7)(@swc/core@1.10.8)(@types/node@22.10.1)(@typescript-eslint/parser@8.20.0(eslint@9.18.0)(typescript@5.7.3))(eslint-config-prettier@9.1.0(eslint@9.18.0))(eslint@9.18.0)(nx@20.0.6(@swc/core@1.10.8))(typescript@5.7.3)
+        version: 20.0.6(@babel/traverse@7.24.7)(@swc/core@1.10.8)(@types/node@22.10.1)(@typescript-eslint/parser@8.20.0(eslint@9.18.0)(typescript@5.7.3))(eslint-config-prettier@10.0.1(eslint@9.18.0))(eslint@9.18.0)(nx@20.0.6(@swc/core@1.10.8))(typescript@5.7.3)
       '@nx/jest':
         specifier: 20.0.6
         version: 20.0.6(@babel/traverse@7.24.7)(@swc/core@1.10.8)(@types/node@22.10.1)(nx@20.0.6(@swc/core@1.10.8))(ts-node@10.9.2(@swc/core@1.10.8)(@types/node@22.10.1)(typescript@5.7.3))(typescript@5.7.3)
@@ -67,8 +67,8 @@ importers:
         specifier: 9.18.0
         version: 9.18.0
       eslint-config-prettier:
-        specifier: 9.1.0
-        version: 9.1.0(eslint@9.18.0)
+        specifier: 10.0.1
+        version: 10.0.1(eslint@9.18.0)
       eslint-plugin-import:
         specifier: 2.31.0
         version: 2.31.0(@typescript-eslint/parser@8.20.0(eslint@9.18.0)(typescript@5.7.3))(eslint@9.18.0)
@@ -2390,8 +2390,8 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  eslint-config-prettier@9.1.0:
-    resolution: {integrity: sha512-NSWl5BFQWEPi1j4TjVNItzYV7dZXZ+wP6I6ZhrBGpChQhZRUaElihE9uRRkcbRnNb76UMKDF3r+WTmNcGPKsqw==}
+  eslint-config-prettier@10.0.1:
+    resolution: {integrity: sha512-lZBts941cyJyeaooiKxAtzoPHTN+GbQTJFAIdQbRhA4/8whaAraEh47Whw/ZFfrjNSnlAxqfm9i0XVAEkULjCw==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
@@ -5891,7 +5891,7 @@ snapshots:
       tslib: 2.4.0
       yargs-parser: 21.1.1
 
-  '@nx/eslint-plugin@20.0.6(@babel/traverse@7.24.7)(@swc/core@1.10.8)(@types/node@22.10.1)(@typescript-eslint/parser@8.20.0(eslint@9.18.0)(typescript@5.7.3))(eslint-config-prettier@9.1.0(eslint@9.18.0))(eslint@9.18.0)(nx@20.0.6(@swc/core@1.10.8))(typescript@5.7.3)':
+  '@nx/eslint-plugin@20.0.6(@babel/traverse@7.24.7)(@swc/core@1.10.8)(@types/node@22.10.1)(@typescript-eslint/parser@8.20.0(eslint@9.18.0)(typescript@5.7.3))(eslint-config-prettier@10.0.1(eslint@9.18.0))(eslint@9.18.0)(nx@20.0.6(@swc/core@1.10.8))(typescript@5.7.3)':
     dependencies:
       '@nx/devkit': 20.0.6(nx@20.0.6(@swc/core@1.10.8))
       '@nx/js': 20.0.6(@babel/traverse@7.24.7)(@swc/core@1.10.8)(@types/node@22.10.1)(nx@20.0.6(@swc/core@1.10.8))(typescript@5.7.3)
@@ -5905,7 +5905,7 @@ snapshots:
       semver: 7.6.2
       tslib: 2.4.0
     optionalDependencies:
-      eslint-config-prettier: 9.1.0(eslint@9.18.0)
+      eslint-config-prettier: 10.0.1(eslint@9.18.0)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -7274,7 +7274,7 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-config-prettier@9.1.0(eslint@9.18.0):
+  eslint-config-prettier@10.0.1(eslint@9.18.0):
     dependencies:
       eslint: 9.18.0
 
