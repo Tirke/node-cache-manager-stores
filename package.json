@@ -29,7 +29,7 @@
     "@typescript-eslint/parser": "8.20.0",
     "cache-manager": "5.7.6",
     "eslint": "9.18.0",
-    "eslint-config-prettier": "9.1.0",
+    "eslint-config-prettier": "10.0.1",
     "eslint-plugin-import": "2.31.0",
     "jest": "29.7.0",
     "nx": "20.0.6",
