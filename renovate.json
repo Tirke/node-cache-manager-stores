@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", ":semanticPrefixChore", ":pinOnlyDevDependencies"],
   "prHourlyLimit": 7,
+  "enable": false,
   "packageRules": [
     {
       "matchSourceUrlPrefixes": ["https://github.com/nrwl/"],
